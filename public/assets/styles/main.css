@@ -1,0 +1,61 @@
+body{
+    background: #ffffff !important;
+}
+.card-category1 ,.card-category3{
+	background-color: #CAF1FF;
+    padding: 20px;
+    border-radius: 50px 0 50px 0;
+    display: flex;
+}
+.card-category2, .card-category4{
+	background-color: #FFE5EE;
+    padding: 20px;
+    border-radius: 50px 0 50px 0;
+    display: flex;
+}
+.tentang{
+    padding-left: 20%;
+    text-align: center;
+    font-size: x-large;
+}
+
+.seeall{
+    text-align: right;
+}
+
+.sbar{
+    background: #E3E5F8;
+    border: none;
+    padding: 5px;
+    border-radius: 15px 0 0 0;
+    height: 40px;
+    padding-left: 15px;
+}
+.sbut{
+    height: 40px;
+    width: 40px;
+    border: none;
+    background: #E3E5F8;
+    border-radius: 0 0 15px 0;
+}
+
+.pemberitahuan{
+    height: 40px;
+    width: 40px;
+    background: #E3E5F8;
+    border-radius: 15px 0 15px 0;
+    padding: 10px;
+}
+
+.avatar-profil{
+    width: auto !important;
+}
+.avatar-profil h4{
+    padding-top: 10px;
+    margin-left: 10px;
+}
+.avatar-profil img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
