@@ -97,7 +97,7 @@
 
                                 <p class="text-center mt-2">
                                     <span>Already have an account?</span>
-                                    <a href="page-auth-login-v1.html">
+                                    <a href="{{route('index')}}">
                                         <span>Sign in instead</span>
                                     </a>
                                 </p>

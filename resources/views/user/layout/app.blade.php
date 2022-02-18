@@ -1,23 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="loading" lang="en"data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
     <title>Invense</title>
+    <link rel="apple-touch-icon" href="{{asset('assets/admin/')}}/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/admin/')}}/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/vendors/css/charts/apexcharts.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ asset ('assets/styles') }}/landing.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/plugins/charts/chart-apex.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('assets/styles') }}/usdas.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- END: Custom CSS-->
 </head>
-<body>
-    @include('user.layout.navbar')
-    
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+
+    <!-- BEGIN: Main Menu-->
+    @include('user.layout.sidebar')
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
     @yield('content')
-    
-    @include('user.layout.footer')
-    
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{{asset('assets/admin/')}}/app-assets/js/core/app-menu.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/js/core/app.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{{asset('assets/admin/')}}/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+    <!-- END: Page JS-->
+
+    <!-- BEGIN: Custom JS-->
+    <script src="{{asset('assets/script/dashboard.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+    <!-- END: Custom JS-->
+
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        });
+
+    @stack('scripts')
 </body>
+<!-- END: Body-->
+
 </html>

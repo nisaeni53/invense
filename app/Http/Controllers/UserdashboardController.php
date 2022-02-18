@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\register;
+use App\Models\userdashboard;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class UserdashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('authentication.register');
+        return view('user.dashboard');
     }
 
     /**
@@ -41,10 +41,10 @@ class RegisterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\register  $register
+     * @param  \App\Models\userdashboard  $userdashboard
      * @return \Illuminate\Http\Response
      */
-    public function show(register $register)
+    public function show(userdashboard $userdashboard)
     {
         //
     }
@@ -52,10 +52,10 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\register  $register
+     * @param  \App\Models\userdashboard  $userdashboard
      * @return \Illuminate\Http\Response
      */
-    public function edit(register $register)
+    public function edit(userdashboard $userdashboard)
     {
         //
     }
@@ -64,10 +64,10 @@ class RegisterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\register  $register
+     * @param  \App\Models\userdashboard  $userdashboard
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, register $register)
+    public function update(Request $request, userdashboard $userdashboard)
     {
         //
     }
@@ -75,10 +75,10 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\register  $register
+     * @param  \App\Models\userdashboard  $userdashboard
      * @return \Illuminate\Http\Response
      */
-    public function destroy(register $register)
+    public function destroy(userdashboard $userdashboard)
     {
         //
     }

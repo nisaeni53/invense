@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LandingController;
+use App\Http\Controllers\UserdashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +19,8 @@ use Illuminate\Support\Facades\Route;
 //Dashboard
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::resource('/', LandingController::class);
+Route::resource('/user', UserdashboardController::class);
 
 
-Route::get('/login', function () {
-    return view('authentication.login');
-});
-Route::get('/register', function () {
-    return view('authentication.register');
-});
+Route::resource('/', LoginController::class);
+Route::resource('/register', RegisterController::class);

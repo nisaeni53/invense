@@ -95,7 +95,7 @@
 
                                 <p class="text-center mt-2">
                                     <span>New on our platform?</span>
-                                    <a href="page-auth-register-v1.html">
+                                    <a href="{{route('register.index')}}">
                                         <span>Create an account</span>
                                     </a>
                                 </p>
