@@ -22,18 +22,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Dashboard
+// Route::resource('/', LoginController::class);
+
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/login', function() {
-    return view('authentication.login');
+    return view('authentication.login'); 
 })->name('login');
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/simpanregister', [RegisterController::class, 'simpanregister'])->name('simpanregister');
+// Route::resource('/register', RegisterController::class);
 
-// Route::resource('/', LoginController::class);
 
 Route::group(['middleware' => ['auth']], function () {
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('/user', UserdashboardController::class);
-Route::resource('/register', RegisterController::class);
 Route::resource('/admin/peminjam', PeminjamController::class);
 Route::resource('/admin/barang', BarangController::class);
 Route::resource('/admin/barangpinjam', BarangPinjamController::class);

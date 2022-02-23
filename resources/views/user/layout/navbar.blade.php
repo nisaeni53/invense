@@ -1,7 +1,7 @@
 <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light">
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
-            <h2>Wellcome, <b>Jafar</b></h2>
+            <h2>Wellcome, <b>{{ auth()->User()->name }}</b></h2>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
             {{--  <li class="nav-item mt-1 mr-1">
@@ -21,7 +21,7 @@
                 <li class="nav-item">
                     <div class="avatar-profil">
                         <img src="{{asset('library/icon/iyan.jpg')}}" alt="" height="100%" width="100%">
-                        <h4 style="float: right">Jafar S</h4>
+                        <h4 style="float: right">{{ auth()->User()->name }}</h4>
                     </div>
                 </li>
             </a>

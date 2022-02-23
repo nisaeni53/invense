@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\register;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -82,4 +84,23 @@ class RegisterController extends Controller
     {
         //
     }
+
+    public function register (register $register) {
+        return view('authentication.register');
+    }
+
+    public function simpanregister (Request $request) {
+        // dd($request->all());
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'role' => 'admin',
+            'remember_token' => Str::random(60),
+        ]);
+
+        return view('admin.dashboard');
+
+    }
+
 }

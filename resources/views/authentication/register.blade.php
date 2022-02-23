@@ -64,21 +64,22 @@
                                 <h4 class="card-title mb-1">Adventure starts here 🚀</h4>
                                 <p class="card-text mb-2">Make your app management easy and fun!</p>
 
-                                <form class="auth-register-form mt-2" action="index.html" method="POST">
+                                <form class="auth-register-form mt-2" action="{{ route('simpanregister')}} " method="POST">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="register-username" class="form-label">Username</label>
-                                        <input type="text" class="form-control" id="register-username" name="register-username" placeholder="johndoe" aria-describedby="register-username" tabindex="1" autofocus />
+                                        <input type="text" class="form-control" id="register-username" name="name" placeholder="johndoe" aria-describedby="register-username" tabindex="1" autofocus />
                                     </div>
                                     <div class="form-group">
                                         <label for="register-email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="register-email" name="register-email" placeholder="john@example.com" aria-describedby="register-email" tabindex="2" />
+                                        <input type="text" class="form-control" id="register-email" name="email" placeholder="john@example.com" aria-describedby="register-email" tabindex="2" />
                                     </div>
 
                                     <div class="form-group">
                                         <label for="register-password" class="form-label">Password</label>
 
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input type="password" class="form-control form-control-merge" id="register-password" name="register-password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
+                                            <input type="password" class="form-control form-control-merge" id="register-password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                                             </div>
@@ -97,7 +98,7 @@
 
                                 <p class="text-center mt-2">
                                     <span>Already have an account?</span>
-                                    <a href="{{route('index')}}">
+                                    <a href="{{route('login')}}">
                                         <span>Sign in instead</span>
                                     </a>
                                 </p>
