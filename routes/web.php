@@ -8,6 +8,7 @@ use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PermintaanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,14 +22,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Dashboard
+Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/login', function() {
+    return view('authentication.login');
+})->name('login');
+
+// Route::resource('/', LoginController::class);
+
+Route::group(['middleware' => ['auth']], function () {
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::resource('/user', UserdashboardController::class);
-
-
-Route::resource('/', LoginController::class);
 Route::resource('/register', RegisterController::class);
 Route::resource('/admin/peminjam', PeminjamController::class);
 Route::resource('/admin/barang', BarangController::class);
 Route::resource('/admin/barangpinjam', BarangPinjamController::class);
 Route::resource('/admin/permintaan', PermintaanController::class);
+});

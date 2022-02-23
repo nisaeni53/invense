@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\login;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -82,4 +83,21 @@ class LoginController extends Controller
     {
         //
     }
+
+    public function postlogin (Request $request){
+        // dd($request->all());
+        // return view('authentication.login');
+
+        if (Auth::attempt($request->only('email','password'))){
+            return redirect('/admin/dashboard');
+
+        }
+        return redirect('login');
+    }
+
+    public function logout (Request $request){
+        Auth::logout();
+        return redirect('login');
+    }
+
 }
