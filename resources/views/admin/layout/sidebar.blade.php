@@ -12,7 +12,7 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content mt-5">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="nav-item active"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Dashboard</span></a>
+            <li class="nav-item active"><a class="d-flex align-items-center" href="{{route ('halamansatu')}}"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Dashboard</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">Barang</span></a>
                 <ul class="menu-content">

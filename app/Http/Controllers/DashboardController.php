@@ -82,4 +82,11 @@ class DashboardController extends Controller
     {
         //
     }
+
+    public function halamansatu(){
+        return view('admin.dashboard');
+    }
+
+    
+
 }

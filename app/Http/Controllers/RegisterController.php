@@ -95,11 +95,11 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'role' => 'admin',
+            'role' => $request->role,
             'remember_token' => Str::random(60),
         ]);
 
-        return view('admin.dashboard');
+        return redirect('login');
 
     }
 

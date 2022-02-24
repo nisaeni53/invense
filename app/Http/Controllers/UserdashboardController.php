@@ -82,4 +82,8 @@ class UserdashboardController extends Controller
     {
         //
     }
+
+    public function halamandua(){
+        return view('user.dashboard');
+    }
 }

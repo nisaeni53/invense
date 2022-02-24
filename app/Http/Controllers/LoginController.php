@@ -89,15 +89,19 @@ class LoginController extends Controller
         // return view('authentication.login');
 
         if (Auth::attempt($request->only('email','password'))){
-            return redirect('/admin/dashboard');
-
+            if (Auth::user()->role == 'admin') { // Role Admin
+                return redirect('/admin/dashboard');
+            } elseif (Auth::user()->role == 'user') { // Role User
+                return redirect('/user/dashboard');
+            }
+            return redirect('/login');
         }
-        return redirect('login');
+        return redirect('/login');
     }
 
     public function logout (Request $request){
         Auth::logout();
-        return redirect('login');
+        return redirect('/login');
     }
 
 }

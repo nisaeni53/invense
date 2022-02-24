@@ -34,11 +34,18 @@ Route::post('/simpanregister', [RegisterController::class, 'simpanregister'])->n
 // Route::resource('/register', RegisterController::class);
 
 
-Route::group(['middleware' => ['auth']], function () {
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('/user', UserdashboardController::class);
-Route::resource('/admin/peminjam', PeminjamController::class);
-Route::resource('/admin/barang', BarangController::class);
-Route::resource('/admin/barangpinjam', BarangPinjamController::class);
-Route::resource('/admin/permintaan', PermintaanController::class);
+Route::group(['middleware' => ['auth','cekrole:admin']], function () {
+
+    // Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin/dashboard', [DashboardController::class, 'halamansatu'])->name('halamansatu');
+    Route::resource('/admin/peminjam', PeminjamController::class);
+    Route::resource('/admin/barang', BarangController::class);
+    Route::resource('/admin/barangpinjam', BarangPinjamController::class);
+    Route::resource('/admin/permintaan', PermintaanController::class);
 });
+
+Route::group(['middleware' => ['auth','cekrole:user']], function() {  
+    // Route::resource('/user', UserdashboardController::class);
+    Route::get('/user/dashboard', [UserdashboardController::class, 'halamandua'])->name('halamandua');
+});
+
