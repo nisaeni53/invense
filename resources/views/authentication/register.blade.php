@@ -76,7 +76,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="register-role" class="form-label">Role</label>
-                                        <input type="text" class="form-control" id="register-email" name="role" placeholder="admin" aria-describedby="register-role" tabindex="3" />
+                                        <select class="custom-select" id="customSelect" name="role">
+                                            <option selected>Choose Role</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="register-password" class="form-label">Password</label>
