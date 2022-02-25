@@ -16,12 +16,12 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">Barang</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="{{route ('barang.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Data Barang</span></a>
+                    {{-- <li><a class="d-flex align-items-center" href="{{route ('barang.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Data Barang</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="{{route ('peminjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">Data Peminjam</span></a>
-                    </li>
-                    <li><a class="d-flex align-items-center" href="{{route ('barangpinjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Data Yang Dipinjam</span></a>
-                    </li>
+                    <li><a class="d-flex align-items-center" href="{{route ('peminjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">Data Pinjam (orang barang</span></a>
+                    </li> --}}
+                    {{-- <li><a class="d-flex align-items-center" href="{{route ('barangpinjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Data permintaan (3 table </span></a>
+                    </li> --}}
                 </ul>
             </li>
             {{--  <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">Barang</span></a>
@@ -34,6 +34,10 @@
                     </li>
                 </ul>
             </li>  --}}
+            <li><a class="d-flex align-items-center" href="{{route ('barang.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Data Barang</span></a>
+            </li>
+            <li><a class="d-flex align-items-center" href="{{route ('peminjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">Data Pinjam (orang barang</span></a>
+            </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('permintaan.index')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>

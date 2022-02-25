@@ -20,7 +20,7 @@
                                         <div class="icon1 mr-2"><img src="{{asset('library/icon')}}/Folderblack.png" alt="" style="height: 70%"></div>
                                     </div>
                                     <div class="col-6 text-center ">
-                                        <h3>Folder</h3>
+                                        <h3>Peminjaman</h3>
                                         <p>01</p>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                         <div class="icon1 mr-2"><img src="{{asset('library/icon')}}/Folderblack.png" alt="" style="height: 70%"></div>
                                     </div>
                                     <div class="col-6 text-center ">
-                                        <h3>Folder</h3>
+                                        <h3>Pengembalian</h3>
                                         <p>01</p>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                         <div class="icon1 mr-2"><img src="{{asset('library/icon')}}/Folderblack.png" alt="" style="height: 70%"></div>
                                     </div>
                                     <div class="col-6 text-center ">
-                                        <h3>Folder</h3>
+                                        <h3>Permintaan</h3>
                                         <p>01</p>
                                     </div>
                                 </div>

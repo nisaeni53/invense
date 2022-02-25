@@ -8,6 +8,7 @@ use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PermintaanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
+use App\Http\Controllers\LandingController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -35,7 +36,6 @@ Route::post('/simpanregister', [RegisterController::class, 'simpanregister'])->n
 
 
 Route::group(['middleware' => ['auth','cekrole:admin']], function () {
-
     // Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/admin/dashboard', [DashboardController::class, 'halamansatu'])->name('halamansatu');
     Route::resource('/admin/peminjam', PeminjamController::class);
@@ -47,5 +47,6 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
 Route::group(['middleware' => ['auth','cekrole:user']], function() {  
     // Route::resource('/user', UserdashboardController::class);
     Route::get('/user/dashboard', [UserdashboardController::class, 'halamandua'])->name('halamandua');
+    Route::resource('/user/landing', LandingController::class);
 });
 

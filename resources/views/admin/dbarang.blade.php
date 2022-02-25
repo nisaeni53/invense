@@ -19,10 +19,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Nama</th>
+                                        <th>Kode barang</th>
+                                        <th>Nama barang</th>
+                                        <th>Merk </th>
                                         <th>Kategori</th>
-                                        <th>Jumlah</th>
+                                        <th>Stok barang</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -32,6 +33,7 @@
                                             <img src="{{ asset ('assets/admin')}}/app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" />
                                             <span class="font-weight-bold">Angular Project</span>
                                         </td>
+                                        <td>kode</td>
                                         <td>Peter Charls</td>
                                         <td>
                                             <div class="avatar-group">
