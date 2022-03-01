@@ -14,7 +14,10 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return view('admin.dbarang');
+        $barangs = barang::latest()->paginate(5);
+      
+        return view('admin.dbarang',compact('barangs'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -36,6 +39,16 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'namab' => 'required',
+            'kategorib' => 'required',
+            'stokb' => 'required',
+        ]);
+      
+        Barang::create($request->all());
+       
+        return redirect()->route('barang.index')
+                        ->with('Barang Telah Ditambahkan.');
     }
 
     /**
@@ -58,6 +71,7 @@ class BarangController extends Controller
     public function edit(barang $barang)
     {
         //
+        return view('admin.form.formeditbarang',compact('barang'));
     }
 
     /**
@@ -70,6 +84,16 @@ class BarangController extends Controller
     public function update(Request $request, barang $barang)
     {
         //
+        $request->validate([
+            'namab' => 'required',
+            'kategorib' => 'required',
+            'stokb' => 'required',
+        ]);
+      
+        $barang->update($request->all());
+      
+        return redirect()->route('barang.index')
+                        ->with('Produk Telah Sukses Di Edit');
     }
 
     /**
@@ -81,5 +105,9 @@ class BarangController extends Controller
     public function destroy(barang $barang)
     {
         //
+        $barang->delete();
+       
+        return redirect()->route('barang.index')
+                        ->with('Barang Dihapus');
     }
 }

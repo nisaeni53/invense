@@ -12,19 +12,17 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Data Pinjam</h4>
+                            <h4 class="card-title">Data Peminjamanan</h4>
                             <button class="btn btn-danger">Clear History</button>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        {{-- <th>Id</th> --}}
+                                        <th>Id</th>
                                         <th>Nama peminjam</th>
                                         <th>Nama Barang</th>
-                                        <th>Jumlah pinjam</th>
-                                        <th>Keterangan</th>
-                                        <th>Tanggal pinjam</th>
+                                        <th>Jumlah</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>

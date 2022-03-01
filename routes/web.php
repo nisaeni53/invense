@@ -8,7 +8,6 @@ use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PermintaanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
-use App\Http\Controllers\LandingController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -33,20 +32,22 @@ Route::get('/login', function() {
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/simpanregister', [RegisterController::class, 'simpanregister'])->name('simpanregister');
 // Route::resource('/register', RegisterController::class);
+Route::resource('barang', BarangController::class);
 
 
 Route::group(['middleware' => ['auth','cekrole:admin']], function () {
+
     // Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/admin/dashboard', [DashboardController::class, 'halamansatu'])->name('halamansatu');
     Route::resource('/admin/peminjam', PeminjamController::class);
     Route::resource('/admin/barang', BarangController::class);
     Route::resource('/admin/barangpinjam', BarangPinjamController::class);
     Route::resource('/admin/permintaan', PermintaanController::class);
+    Route::resource('barang', BarangController::class);
 });
 
 Route::group(['middleware' => ['auth','cekrole:user']], function() {  
     // Route::resource('/user', UserdashboardController::class);
     Route::get('/user/dashboard', [UserdashboardController::class, 'halamandua'])->name('halamandua');
-    Route::resource('/user/landing', LandingController::class);
 });
 

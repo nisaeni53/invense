@@ -84,6 +84,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="register-password" class="form-label">Password</label>
+
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input type="password" class="form-control form-control-merge" id="register-password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="4" />
                                             <div class="input-group-append">
@@ -93,13 +94,13 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" type="checkbox" id="register-privacy-policy" tabindex="5" />
+                                            <input class="custom-control-input" type="checkbox" id="register-privacy-policy" tabindex="4" />
                                             <label class="custom-control-label" for="register-privacy-policy">
                                                 I agree to <a href="javascript:void(0);">privacy policy & terms</a>
                                             </label>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary btn-block" tabindex="6">Sign up</button>
+                                    <button class="btn btn-primary btn-block" tabindex="5">Sign up</button>
                                 </form>
 
                                 <p class="text-center mt-2">

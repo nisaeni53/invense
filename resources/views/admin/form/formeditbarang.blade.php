@@ -17,7 +17,7 @@
                                     <h4 class="card-title">Form Barang</h4>
                                 </div>
                                 @if ($errors->any())
-                                    <div class="alert alert-danger">
+                                <div class="alert alert-danger">
                                     <strong>Whoops!</strong> Input Yang Anda Masukkan Salah.<br><br>
                                     <ul>
                                         @foreach ($errors->all() as $error)
@@ -26,18 +26,18 @@
                                     </ul>
                                 </div>
                                 @endif
-                                <div class="card-body">   
-                                <form action="{{ route('barang.store') }}" method="POST">
+                                <div class="card-body">
+                                <form action="{{ route('barang.update',$barang->id) }}" method="POST">
                                 @csrf
-  
-                                    <div class="row">
+                                @method('PUT')
+                                <div class="row">
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-sm-3 col-form-label">
                                                     <label for="namab">Nama Barang</label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input type="text" id="namab" class="form-control" name="namab" placeholder="Nama Barang" />
+                                                    <input type="text" id="namab" class="form-control" name="namab" value="{{ $barang->namab }}" placeholder="Nama Barang" />
                                                 </div>
                                             </div>
                                         </div>
@@ -47,7 +47,7 @@
                                                     <label for="kategorib">Kategori</label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input type="text" id="kategorib" class="form-control" name="kategorib" placeholder="Kategori" />
+                                                    <input type="text" id="kategorib" class="form-control" name="kategorib" value="{{ $barang->kategorib }}" placeholder="Kategori" />
                                                 </div>
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
                                                     <label for="stokb">Stok</label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input type="number" id="stokb" class="form-control" name="stokb" placeholder="Stok" />
+                                                    <input type="number" id="stokb" class="form-control" name="stokb" value="{{ $barang->stokb }}" placeholder="Stok" />
                                                 </div>
                                             </div>
                                         </div>
@@ -76,4 +76,4 @@
         </div>
     </div>
 </div>
-@endsection                                    
+@endsection
