@@ -8,6 +8,7 @@ use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PermintaanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
+use App\Http\Controllers\Inventaris;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -49,5 +50,6 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
 Route::group(['middleware' => ['auth','cekrole:user']], function() {  
     // Route::resource('/user', UserdashboardController::class);
     Route::get('/user/dashboard', [UserdashboardController::class, 'halamandua'])->name('halamandua');
+    Route::resource('/user/peminjaman', Inventaris::class);
 });
 

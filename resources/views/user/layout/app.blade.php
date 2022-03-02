@@ -37,6 +37,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset ('assets/styles') }}/usdas.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('assets/styles') }}/inven.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- END: Custom CSS-->

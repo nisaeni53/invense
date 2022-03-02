@@ -16,7 +16,7 @@
                 <li class="nav-item"><a class="d-flex align-items-center" href="{{route('halamandua')}}"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Dashboard</span></a>
             </li>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="shopping-cart"></i><span class="menu-title text-truncate" data-i18n="Transaksi">Peminjaman</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/user/peminjaman')}}"><i data-feather="shopping-cart"></i><span class="menu-title text-truncate" data-i18n="Transaksi">Peminjaman</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Pengembalian</span></a>
             </li>
