@@ -43,59 +43,60 @@
                             </div>
                         </div>  --}}
                         <div class="col-md-4 col-sm-12">
-                            <a href="#">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Infocus</h4>
-                                        <p class="card-desc">Some quick example text to build on the card title.</p>
-                                    </div>
+                            <div class="card">
+                                <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Infocus</h4>
+                                    <p class="card-desc">Some quick example text to build on the card title.</p>
                                 </div>
-                            </a>
+                                <a href="#">
+                                    <div class="card-footer text-center">
+                                        Kembalikan
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-md-4 col-sm-12">
-                            <a href="#">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Infocus</h4>
-                                        <p class="card-desc">Some quick example text to build on the card title.</p>
-                                    </div>
+                            <div class="card">
+                                <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Infocus</h4>
+                                    <p class="card-desc">Some quick example text to build on the card title.</p>
                                 </div>
-                            </a>
+                                <a href="#">
+                                    <div class="card-footer text-center">
+                                        Kembalikan
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-md-4 col-sm-12">
-                            <a href="#">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Infocus</h4>
-                                        <p class="card-desc">Some quick example text to build on the card title.</p>
-                                    </div>
+                            <div class="card">
+                                <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Infocus</h4>
+                                    <p class="card-desc">Some quick example text to build on the card title.</p>
                                 </div>
-                            </a>
+                                <a href="#">
+                                    <div class="card-footer text-center">
+                                        Kembalikan
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-md-4 col-sm-12">
-                            <a href="#">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Infocus</h4>
-                                        <p class="card-desc">Some quick example text to build on the card title.</p>
-                                    </div>
+                            <div class="card">
+                                <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Infocus</h4>
+                                    <p class="card-desc">Some quick example text to build on the card title.</p>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <a href="#">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Infocus</h4>
-                                        <p class="card-desc">Some quick example text to build on the card title.</p>
+                                <a href="#">
+                                    <div class="card-footer text-center">
+                                        Kembalikan
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

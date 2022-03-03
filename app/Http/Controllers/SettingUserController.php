@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Inventaris extends Controller
+class SettingUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class Inventaris extends Controller
      */
     public function index()
     {
-        //
-        return view('user.inventaris');
+        return view('user.setting');
     }
 
     /**
@@ -24,7 +23,7 @@ class Inventaris extends Controller
      */
     public function create()
     {
-        return view('user.forminven');
+        //
     }
 
     /**

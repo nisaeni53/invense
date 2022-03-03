@@ -23,6 +23,7 @@
                                         <th>Nama peminjam</th>
                                         <th>Nama Barang</th>
                                         <th>Jumlah</th>
+                                        <th>Tanggal</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>

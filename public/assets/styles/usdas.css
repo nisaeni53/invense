@@ -7,9 +7,9 @@ vertical-layout.vertical-menu-modern.menu-collapsed.header-navbar.floating-nav {
 }
 
 .header-navbar{
-    margin: 0 0 0 !important;
-    width: calc(100vw - (100vw - 100%) - calc(0rem * 2) - 260px) !important;
+    position: absolute !important;
 }
+
 .pemberitahuan{
     height: 40px;
     width: 40px;

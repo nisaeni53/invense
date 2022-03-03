@@ -27,9 +27,11 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Nama</th>
-                                        <th>Kategori</th>
+                                        <th>Nama Barang</th>
+                                        <th>Kondisi</th>
                                         <th>Jumlah</th>
+                                        <th>Jenis</th>
+                                        <th>Tanggal</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>

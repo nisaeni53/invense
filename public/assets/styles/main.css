@@ -1,6 +1,9 @@
 body{
     background: #ffffff !important;
 }
+.header-navbar{
+    position: absolute !important;
+}
 .card-category1 ,.card-category3{
 	background-color: #CAF1FF;
     padding: 20px;

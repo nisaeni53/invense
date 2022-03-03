@@ -21,7 +21,8 @@
                                         <th>Id pinjam</th>
                                         <th>Nama peminjam</th>
                                         <th>Nama Barang</th>
-                                        <th>Jumlah pinjam</th>
+                                        <th>Jumlah barang</th>
+                                        <th>Tanggal</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>

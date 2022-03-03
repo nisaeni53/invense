@@ -44,10 +44,10 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-sm-3 col-form-label">
-                                                    <label for="kategorib">Kategori</label>
+                                                    <label for="kategorib">Kondisi</label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input type="text" id="kategorib" class="form-control" name="kategorib" placeholder="Kategori" />
+                                                    <input type="text" id="kategorib" class="form-control" name="kategorib" placeholder="Baik/Kurang" />
                                                 </div>
                                             </div>
                                         </div>
@@ -57,7 +57,40 @@
                                                     <label for="stokb">Stok</label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input type="number" id="stokb" class="form-control" name="stokb" placeholder="Stok" />
+                                                    <input type="number" id="stokb" class="form-control" name="stokb" placeholder="Minimal 1" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-sm-3 col-form-label">
+                                                    <label for="stokb">Jenis</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input type="number" id="stokb" class="form-control" name="stokb" placeholder="Kayu / Elektronik" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-sm-3 col-form-label">
+                                                    <label for="tanggal">Tanggal</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="tanggal" class="form-control flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-sm-3 col-form-label">
+                                                    <label for="foto">Foto</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="foto">
+                                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

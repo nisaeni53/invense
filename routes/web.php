@@ -34,6 +34,18 @@ Route::get('/register', [RegisterController::class, 'register'])->name('register
 Route::post('/simpanregister', [RegisterController::class, 'simpanregister'])->name('simpanregister');
 // Route::resource('/register', RegisterController::class);
 Route::resource('barang', BarangController::class);
+Route::get('/coba', function(){
+    return view('user.forminven');
+});
+Route::get('/coba2', function(){
+    return view('admin.multitable');
+});
+Route::get('/coba3', function(){
+    return view('user.pembalikan');
+});
+Route::get('/coba4', function(){
+    return view('user.setting');
+});
 
 
 Route::group(['middleware' => ['auth','cekrole:admin']], function () {
