@@ -10,6 +10,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
 use App\Http\Controllers\Inventaris;
 use App\Http\Controllers\PembalikanController;
+use App\Http\Controllers\SettingUserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -35,18 +36,18 @@ Route::get('/register', [RegisterController::class, 'register'])->name('register
 Route::post('/simpanregister', [RegisterController::class, 'simpanregister'])->name('simpanregister');
 // Route::resource('/register', RegisterController::class);
 Route::resource('barang', BarangController::class);
-Route::get('/coba', function(){
-    return view('user.forminven');
-});
+// Route::get('/coba', function(){
+//     return view('user.forminven');
+// });
 Route::get('/coba2', function(){
     return view('admin.multitable');
 });
-Route::get('/coba3', function(){
-    return view('user.pembalikan');
-});
-Route::get('/coba4', function(){
-    return view('user.setting');
-});
+// Route::get('/coba3', function(){
+//     return view('user.pembalikan');
+// });
+// Route::get('/coba4', function(){
+//     return view('user.setting');
+// });
 
 
 Route::group(['middleware' => ['auth','cekrole:admin']], function () {
@@ -60,10 +61,12 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
     Route::resource('barang', BarangController::class);
 });
 
+
 Route::group(['middleware' => ['auth','cekrole:user']], function() {  
     // Route::resource('/user', UserdashboardController::class);
     Route::get('/user/dashboard', [UserdashboardController::class, 'halamandua'])->name('halamandua');
     Route::resource('/user/peminjaman', Inventaris::class);
     Route::resource('/user/pengembalian', PembalikanController::class);
-});
+    Route::resource('/user/setting', SettingUserController::class);
+}); 
 

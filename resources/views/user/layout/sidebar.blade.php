@@ -20,9 +20,9 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/user/pengembalian')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Pengembalian</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Permintaan</span></a>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Setting</span></a>
+            {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/user/permintaan')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Permintaan</span></a>
+            </li> --}}
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/user/setting')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Setting</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>
             </li>
