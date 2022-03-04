@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('namab');
             $table->string('kategorib');
+            $table->string('jenisb');
             $table->integer('stokb');
+            $table->string('tanggalb');
             $table->timestamps();
         });
     }

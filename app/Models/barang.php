@@ -12,6 +12,8 @@ class barang extends Model
     protected $fillable = [
         'namab', 
         'kategorib', 
-        'stokb'
+        'jenisb',
+        'stokb',
+        'tanggalb',
     ];
 }

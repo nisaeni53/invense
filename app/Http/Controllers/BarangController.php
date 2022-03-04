@@ -42,7 +42,9 @@ class BarangController extends Controller
         $request->validate([
             'namab' => 'required',
             'kategorib' => 'required',
+            'jenisb' => 'required',
             'stokb' => 'required',
+            'tanggalb' => 'required',
         ]);
       
         Barang::create($request->all());
@@ -87,7 +89,9 @@ class BarangController extends Controller
         $request->validate([
             'namab' => 'required',
             'kategorib' => 'required',
+            'jenisb' => 'required',
             'stokb' => 'required',
+            'tanggalb' => 'required',
         ]);
       
         $barang->update($request->all());

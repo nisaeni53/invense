@@ -29,8 +29,8 @@
                                         <th>Id</th>
                                         <th>Nama Barang</th>
                                         <th>Kondisi</th>
-                                        <th>Jumlah</th>
                                         <th>Jenis</th>
+                                        <th>Jumlah</th>
                                         <th>Tanggal</th>
                                         <th>Actions</th>
                                     </tr>
@@ -41,7 +41,9 @@
                                         <td>{{ ++$i }}</td>
                                         <td>{{ $barang->namab }}</td>
                                         <td>{{ $barang->kategorib }}</td>
+                                        <td>{{ $barang->jenisb }}</td>
                                         <td>{{ $barang->stokb }}</td>
+                                        <td>{{ $barang->tanggalb }}</td>
                                         <td>
                                         <!--
                                         <form action="{{ route('barang.destroy',$barang->id) }}" method="POST">
