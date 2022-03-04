@@ -27,7 +27,7 @@
                                 </div>
                                 @endif
                                 <div class="card-body">
-                                <form action="{{ route('barang.update',$barang->id) }}" method="POST">
+                                <form action="{{ route('barang.update',$barang->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
@@ -78,6 +78,20 @@
                                                 </div>
                                                 <div class="col-sm-9">
                                                     <input type="text" id="tanggalb" class="form-control flatpickr-basic flatpickr-input active" name="tanggalb" value="{{ $barang->tanggalb }}" placeholder="YYYY-MM-DD" readonly="readonly">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-sm-3 col-form-label">
+                                                    <label for="foto">Foto</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="custom-file">
+                                                        <input type="file" name="image" class="custom-file-input" id="image">
+                                                        <img src="/image/{{ $barang->image }}" width="300px">
+                                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

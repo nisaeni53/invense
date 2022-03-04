@@ -40,12 +40,22 @@ class BarangController extends Controller
     {
         //
         $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'namab' => 'required',
             'kategorib' => 'required',
             'jenisb' => 'required',
             'stokb' => 'required',
             'tanggalb' => 'required',
         ]);
+
+        $input = $request->all();
+  
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
       
         Barang::create($request->all());
        
@@ -93,6 +103,17 @@ class BarangController extends Controller
             'stokb' => 'required',
             'tanggalb' => 'required',
         ]);
+
+        $input = $request->all();
+  
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
       
         $barang->update($request->all());
       

@@ -27,6 +27,7 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
+                                        <th>Foto</th>
                                         <th>Nama Barang</th>
                                         <th>Kondisi</th>
                                         <th>Jenis</th>
@@ -39,6 +40,7 @@
                                 @foreach ($barangs as $barang)
                                     <tr>
                                         <td>{{ ++$i }}</td>
+                                        <td><img src="/image/{{ $barang->image }}" width="50px"></td>
                                         <td>{{ $barang->namab }}</td>
                                         <td>{{ $barang->kategorib }}</td>
                                         <td>{{ $barang->jenisb }}</td>

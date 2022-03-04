@@ -27,7 +27,7 @@
                                 </div>
                                 @endif
                                 <div class="card-body">   
-                                <form action="{{ route('barang.store') }}" method="POST">
+                                <form action="{{ route('barang.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
   
                                     <div class="row">
@@ -84,11 +84,11 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-sm-3 col-form-label">
-                                                    <label for="foto">Foto</label>
+                                                    <label for="image">Foto</label>
                                                 </div>
                                                 <div class="col-sm-9">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="foto">
+                                                        <input type="file" name="image" class="custom-file-input" id="image">
                                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                                     </div>
                                                 </div>
