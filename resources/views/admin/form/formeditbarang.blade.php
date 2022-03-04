@@ -54,6 +54,16 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-sm-3 col-form-label">
+                                                    <label for="jenisb">Jenis</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="jenisb" class="form-control" name="jenisb" value="{{ $barang->jenisb }}" placeholder="Kayu / Elektronik" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-sm-3 col-form-label">
                                                     <label for="stokb">Stok</label>
                                                 </div>
                                                 <div class="col-sm-9">
@@ -64,20 +74,10 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-sm-3 col-form-label">
-                                                    <label for="jenisb">Jenis</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="number" id="jenisb" class="form-control" name="jenisb" value="{{ $barang->jenisb }}" placeholder="Kayu / Elektronik" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group row">
-                                                <div class="col-sm-3 col-form-label">
                                                     <label for="tanggalb">Tanggal</label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input type="text" id="tanggalb" class="form-control flatpickr-basic flatpickr-input active" name="tanggalb" placeholder="YYYY-MM-DD" readonly="readonly">
+                                                    <input type="text" id="tanggalb" class="form-control flatpickr-basic flatpickr-input active" name="tanggalb" value="{{ $barang->tanggalb }}" placeholder="YYYY-MM-DD" readonly="readonly">
                                                 </div>
                                             </div>
                                         </div>
