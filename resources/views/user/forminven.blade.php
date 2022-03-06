@@ -19,24 +19,27 @@
                                     <h4 class="card-title">Form Peminjaman (ganti nama barang) </h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form">
+                                    <form class="form" action="{{ route('peminjaman.store') }}" method="POST" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Nama barang</label>
-                                                    <input type="text" id="first-name-column" class="form-control" placeholder="First Name" name="fname-column" />
+                                                    @foreach($barang as $p)
+                                                    <input type="text" id="first-name-column" class="form-control" placeholder="First Name" name="fname-column" value="{{$p->namab}}"/>
                                                 </div>
+                                                @endforeach
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="last-name-column">Nama Peminjam</label>
-                                                    <input type="text" id="last-name-column" class="form-control" placeholder="Last Name" name="lname-column" />
+                                                    <input type="text" id="last-name-column" class="form-control" placeholder="Nama Peminjam" name="lname-column" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="city-column">Jumlah Pinjam</label>
-                                                    <input type="text" id="city-column" class="form-control" placeholder="Class" name="city-column" />
+                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="city-column" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
@@ -71,7 +74,7 @@
                                                 </div>
                                             </div> --}}
                                             <div class="col-12">
-                                                <button type="reset" class="btn btn-primary mr-1">Submit</button>
+                                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
                                                 <button type="reset" class="btn btn-outline-secondary">Reset</button>
                                             </div>
                                         </div>

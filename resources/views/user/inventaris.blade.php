@@ -86,17 +86,20 @@
                                 </div>
                             </a>
                         </div> --}}
+                        @foreach ($barang as $row)
+                        {{-- <td>{{$loop->iteration}}</td> --}}
                         <div class="col-md-4 col-sm-12">
                             <a href="/user/peminjaman/create">
                                 <div class="card">
-                                    <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
+                                    <img class="card-img-top" src="{{url('') . '/' . $row->image}}" alt="Card image cap" height="150" />
                                     <div class="card-body">
-                                        <h4 class="card-title">Infocus</h4>
-                                        <p class="card-desc">Some quick example text to build on the card title.</p>
+                                        <h4 class="card-title">{{$row->namab}}</h4>
+                                        <p class="card-desc">{{$row->jenisb}}</p>
                                     </div>
                                 </div>
                             </a>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </section>

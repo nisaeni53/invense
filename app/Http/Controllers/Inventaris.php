@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\barang;
+use App\Models\peminjam;
 use Illuminate\Http\Request;
 
 class Inventaris extends Controller
@@ -14,7 +16,9 @@ class Inventaris extends Controller
     public function index()
     {
         //
-        return view('user.inventaris');
+        // return view('user.inventaris');
+        $data['barang'] = barang::all();
+        return view('user.inventaris', $data);
     }
 
     /**
@@ -24,7 +28,8 @@ class Inventaris extends Controller
      */
     public function create()
     {
-        return view('user.forminven');
+        $data['barang'] = barang::all();
+        return view('user.forminven', $data);
     }
 
     /**
@@ -36,6 +41,23 @@ class Inventaris extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
+        $rule = [
+            'nama_barang' => 'required',
+            'nama_peminjam' => 'required|string',
+            'jumlah_pinjam' => 'required|string',
+            'jam_pelajaran' => 'required|integer',
+        ];
+
+        $this->validate($request, $rule);
+        $input = $request->all();
+        $status = peminjam::create($input);
+        if ($status){
+            return redirect('user/peminjaman/create')->with('success', 'Data berhasil ditambahkan');
+        }
+        // else{
+        //     return redirect('user/peminjaman/create')->with('error', 'Data gagal ditambahkan');
+        // } 
     }
 
     /**
