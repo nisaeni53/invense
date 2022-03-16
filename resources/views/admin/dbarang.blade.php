@@ -40,7 +40,7 @@
                                 @foreach ($barangs as $barang)
                                     <tr>
                                         <td>{{ ++$i }}</td>
-                                        <td><img src="/image/{{ $barang->image }}" width="50px"></td>
+                                        <td><img src="{{url('') . '/' . $barang->image}}" width="50px"></td>
                                         <td>{{ $barang->namab }}</td>
                                         <td>{{ $barang->kategorib }}</td>
                                         <td>{{ $barang->jenisb }}</td>

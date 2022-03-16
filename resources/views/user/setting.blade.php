@@ -49,7 +49,7 @@
                             </a>
                         </div>
                         <div class="col-sm-12 col-lg-6">
-                            <a href="#">
+                            <a href="{{route ('logout')}}">
                                 <div class="card text-center mb-3">
                                     <div class="card-body">
                                         <h4 class="card-title">Logout</h4>

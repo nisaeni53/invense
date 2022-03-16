@@ -47,17 +47,18 @@ class Inventaris extends Controller
             'nama_peminjam' => 'required|string',
             'jumlah_pinjam' => 'required|string',
             'jam_pelajaran' => 'required|integer',
+            'status' => 'required|integer',
         ];
 
         $this->validate($request, $rule);
         $input = $request->all();
         $status = peminjam::create($input);
         if ($status){
-            return redirect('user/peminjaman/create')->with('success', 'Data berhasil ditambahkan');
+            return redirect('user/dashboard')->with('success', 'Data berhasil ditambahkan');
         }
-        // else{
-        //     return redirect('user/peminjaman/create')->with('error', 'Data gagal ditambahkan');
-        // } 
+        else{
+            return redirect('user/peminjaman/create')->with('error', 'Data gagal ditambahkan');
+        } 
     }
 
     /**

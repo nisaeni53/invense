@@ -20,33 +20,33 @@
                                 </div>
                                 <div class="card-body">
                                     <form class="form" action="{{ route('peminjaman.store') }}" method="POST" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Nama barang</label>
                                                     @foreach($barang as $p)
-                                                    <input type="text" id="first-name-column" class="form-control" placeholder="First Name" name="fname-column" value="{{$p->namab}}"/>
+                                                    <input type="text" id="first-name-column" class="form-control" placeholder="First Name" name="nama_barang" value="{{$p->namab}}"/>
                                                 </div>
                                                 @endforeach
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="last-name-column">Nama Peminjam</label>
-                                                    <input type="text" id="last-name-column" class="form-control" placeholder="Nama Peminjam" name="lname-column" />
+                                                    <input type="text" id="last-name-column" class="form-control" placeholder="Nama Peminjam" name="nama_peminjam" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="city-column">Jumlah Pinjam</label>
-                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="city-column" />
+                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="jumlah_pinjam" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="country-floating">Jam Pelajaran</label>
                                                     {{-- <input type="text" id="country-floating" class="form-control" name="country-floating" placeholder="Jurusan" /> --}}
-                                                    <select class="custom-select" id="customSelect" name="jampelajaran">
+                                                    <select class="custom-select" id="customSelect" name="jam_pelajaran">
                                                         <option selected>Jam Pelajaran ke</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -59,6 +59,11 @@
                                                         <option value="9">9</option>
                                                         <option value="10">10</option>
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="status" value="1">
                                                 </div>
                                             </div>
                                             {{-- <div class="col-md-6 col-12">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\barang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BarangController extends Controller
 {
@@ -50,11 +51,24 @@ class BarangController extends Controller
 
         $input = $request->all();
   
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+        // if ($image = $request->file('image')) {
+        //     $destinationPath = 'image/';
+        //     $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        //     $image->move($destinationPath, $profileImage);
+        //     $input['image'] = "$profileImage";
+        // }
+
+        // $input = $request->all();
+        if ($request->hasFile('image')) {
+             $foto = $request->file('image');
+             $foto_ext = $foto->getClientOriginalExtension();
+             $foto_name = Str::random(8);
+
+             $upload_path = 'assets/uploads/barang/';
+             $imagename = $upload_path.'/'.$foto_name.'.'.$foto_ext;
+             $request->file('image')->move($upload_path,$imagename);
+
+             $input['image'] = $imagename;
         }
       
         Barang::create($request->all());

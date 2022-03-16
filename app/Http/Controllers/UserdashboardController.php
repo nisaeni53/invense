@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\peminjam;
 use App\Models\userdashboard;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class UserdashboardController extends Controller
      */
     public function index()
     {
-        return view('user.dashboard');
+        $data['pinjam'] = peminjam::all();
+        return view('user.dashboard', $data);
     }
 
     /**
@@ -84,6 +86,7 @@ class UserdashboardController extends Controller
     }
 
     public function halamandua(){
-        return view('user.dashboard');
+        $data['pinjam'] = peminjam::all();
+        return view('user.dashboard', $data);
     }
 }
