@@ -18,42 +18,25 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Id pinjam</th>
+                                        <th>Id</th>
                                         <th>Nama Barang</th>
-                                        <th>Jumlah pinjam</th>
-                                        <th>Tanggal pinjam</th>
-                                        <th>Tanggal kembali</th>
+                                        <th>Nama Peminjam</th>
+                                        <th>Jumlah</th>
+                                        <th>Jam Pelajaran</th>
+                                        <th>Tanggal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td> 01 </td>
-                                        <td>Buku</td>
-                                        <td> 100 </td>
-                                        <td>10-1-2021</td>
-                                        <td>12-1-2021</td>
-                                    </tr>
-                                    <tr>
-                                        <td> 02 </td>
-                                        <td>Infocus</td>
-                                        <td> 100 </td>
-                                        <td>10-1-2021</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td> 03 </td>
-                                        <td>Printer</td>
-                                        <td> 100 </td>
-                                        <td>10-1-2021</td>
-                                        <td>12-1-2021</td>
-                                    </tr>
-                                    <tr>
-                                        <td> 04 </td>
-                                        <td>Laptop</td>
-                                        <td> 100 </td>
-                                        <td>10-1-2021</td>
-                                        <td>-</td>
-                                    </tr>
+                                @foreach ($pinjam as $row)
+                                <tr>
+                                    <td>{{ $row->id }}</td>
+                                    <td>{{ $row->nama_barang }}</td>
+                                    <td>{{ $row->nama_peminjam }}</td>
+                                    <td>{{ $row->jumlah_pinjam }}</td>
+                                    <td>{{ $row->jam_pelajaran }}</td>
+                                    <td>{{ $row->updated_at }}</td>
+                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

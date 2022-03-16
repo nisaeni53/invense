@@ -14,7 +14,8 @@ class BarangPinjamController extends Controller
      */
     public function index()
     {
-        return view('admin.dbarangpinjam');
+        $data['pinjam'] = barangpinjam::all();
+        return view('admin.dbarangpinjam', $data);
     }
 
     /**

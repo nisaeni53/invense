@@ -29,7 +29,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($pinjam as $row)
-                                        <tr>
+                                    <tr>
                                                 <td>{{ $row->id }}</td>
                                                 <td>{{ $row->nama_barang }}</td>
                                                 <td>{{ $row->nama_peminjam }}</td>
