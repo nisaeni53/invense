@@ -14,7 +14,8 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        return view('admin.dpeminjaman');
+        $data['pinjam'] = peminjam::all();
+        return view('admin.dpeminjaman', $data);
     }
 
     /**
@@ -70,7 +71,12 @@ class PeminjamController extends Controller
     public function update(Request $request, peminjam $peminjam)
     {
         //
+        $peminjam->status = $request->status;
+        $peminjam->save();
+        return redirect()->route('peminjam.index')
+                        ->with('Peminjaman Disetujui');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -81,5 +87,9 @@ class PeminjamController extends Controller
     public function destroy(peminjam $peminjam)
     {
         //
+        $peminjam->delete();
+       
+        return redirect()->route('peminjam.index')
+                        ->with('Barang Dihapus');
     }
 }

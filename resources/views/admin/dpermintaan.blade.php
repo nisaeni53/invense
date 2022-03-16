@@ -138,9 +138,12 @@
                                             <a href="javascript:void(0);">
                                                 <button class="btn btn-primary">Terima</button>
                                             </a>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-danger">Tolak</button>
-                                            </a>
+                                            <form method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -61,7 +61,7 @@
                                             </a>
                                         </form>
                                         -->
-                                            <form action="{{ route('barang.destroy',$barang->id) }}" method="POST">
+                                        <form action="{{ route('barang.destroy',$barang->id) }}" method="POST">
                                             <a class="btn btn-primary" href="{{ route('barang.edit',$barang->id) }}">Edit</a>
                                             @csrf
                                             @method('DELETE')
