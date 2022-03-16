@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
     Route::resource('/admin/barangpinjam', BarangPinjamController::class);
     Route::resource('/admin/permintaan', PermintaanController::class);
     Route::resource('barang', BarangController::class);
+    Route::resource('data' , 'PeminjamController@datap');
 });
 
 

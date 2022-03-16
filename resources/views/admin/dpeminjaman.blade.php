@@ -36,7 +36,7 @@
                                                 <td>{{ $row->jumlah_pinjam }}</td>
                                                 <td>{{ $row->jam_pelajaran }}</td>
                                         <td>
-                                        <div style="width:175px;">
+                                        <div style="width:175px;"> @if ($row->status == 1)
                                             <div style="float: left; width: 75px"> 
                                             <form action="{{ route('peminjam.update',$row->id) }}" name="status" value="2" method="POST">
                                                 @csrf
@@ -53,7 +53,9 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Tolak</button>
                                             </form>
-                                            </div>
+                                            </div> @else
+                                            <span class="badge badge-pill badge-light-success mr-1">Accepted</span>
+                                            @endif
                                         </div>       
                                         </td>
                                     </tr>
