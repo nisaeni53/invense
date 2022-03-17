@@ -3,14 +3,14 @@
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto"><a class="navbar-brand" href="#">
                 <span class="logo-brand"> 
-                    <img src="{{asset('library/icon/logo.png')}}" alt="" width="100px">
+                    <img src="{{asset('library/icon/logo.png')}}" alt="" width="125px">
                 </span>
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
-    <div class="main-menu-content mt-5">
+    <div class="main-menu-content mt-">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             </li>
                 <li class="nav-item"><a class="d-flex align-items-center" href="{{route('halamandua')}}"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Dashboard</span></a>
