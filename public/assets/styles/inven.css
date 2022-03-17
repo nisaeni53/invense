@@ -41,3 +41,13 @@
     background-color: #5840BC !important;
     color: white;
 }
+
+.img-fluid{
+    width: 100%;
+    height: 130px !important;
+}
+
+.kembalikan{
+    margin: auto;
+    width: 100%;
+}

@@ -59,6 +59,9 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
     Route::resource('/admin/barangpinjam', BarangPinjamController::class);
     Route::resource('/admin/permintaan', PermintaanController::class);
     Route::resource('barang', BarangController::class);
+    Route::get('/admin/profil', function(){
+        return view('admin.profil');
+    });
 });
 
 
@@ -68,6 +71,9 @@ Route::group(['middleware' => ['auth','cekrole:user']], function() {
     Route::resource('/user/peminjaman', Inventaris::class);
     Route::resource('/user/pengembalian', PembalikanController::class);
     Route::resource('/user/setting', SettingUserController::class);
+    Route::get('/user/profil', function(){
+        return view('user.profil');
+    });
     // Route::resource('/user/permintaan', PermintaanController::class);
 }); 
 

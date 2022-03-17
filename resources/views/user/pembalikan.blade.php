@@ -42,7 +42,7 @@
                                 </a>
                             </div>
                         </div>  --}}
-                        @foreach ($kembali as $barang)
+                        {{--  @foreach ($kembali as $barang)
                         <div class="col-md-4 col-sm-12">
                             <div class="card">
                                 <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
@@ -57,8 +57,20 @@
                                 </a>
                             </div>
                         </div>
+                        @endforeach  --}}
+                        @foreach ($kembali as $barang)
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="img-fluid my-2" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" />
+                                    <h4 class="card-title">{{$barang->nama_barang}}</h4>
+                                    <h6 class="card-subtitle text-muted">{{$barang->jumlah_pinjam}}</h6>
+                                    <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
+                                    <a href=""><button class="btn btn-primary kembalikan">Kembalikan</button></a>
+                                </div>
+                            </div>
+                        </div>
                         @endforeach
-
                         {{-- <div class="col-md-4 col-sm-12">
                             <div class="card">
                                 <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />

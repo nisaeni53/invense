@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html class="loading" lang="en"data-textdirection="ltr">
+<html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +16,8 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -31,6 +32,9 @@
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/plugins/forms/pickers/form-pickadate.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/plugins/forms/form-validation.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/')}}/app-assets/css/plugins/charts/chart-apex.css">
     <!-- END: Page CSS-->
 
@@ -66,6 +70,10 @@
     <!-- BEGIN: Page Vendor JS-->
     <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/extensions/dropzone.min.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -75,6 +83,7 @@
 
     <!-- BEGIN: Page JS-->
     <script src="{{asset('assets/admin/')}}/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+    <script src="{{asset('assets/admin/')}}/app-assets/js/scripts/pages/page-account-settings.js"></script>
     <!-- END: Page JS-->
 
     <!-- BEGIN: Custom JS-->
