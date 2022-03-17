@@ -29,6 +29,9 @@
                                 <tbody>
                                 @foreach ($pinjam as $row)
                                 <tr>
+                                @if ($row->status == 1)
+                                
+                                @else
                                     <td>{{ $row->id }}</td>
                                     <td>{{ $row->nama_barang }}</td>
                                     <td>{{ $row->nama_peminjam }}</td>
@@ -36,8 +39,9 @@
                                     <td>{{ $row->jam_pelajaran }}</td>
                                     <td>{{ $row->updated_at }}</td>
                                 </tr>
-                                @endforeach
+                                @endif
                                 </tbody>
+                                @endforeach
                             </table>
                         </div>
                     </div>

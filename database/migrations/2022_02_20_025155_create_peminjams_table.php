@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_peminjam');
             $table->string('jumlah_pinjam');
             $table->integer('jam_pelajaran');
+            $table->integer('status');
             $table->timestamps();
         });
     }

@@ -26,7 +26,8 @@ class PeminjamController extends Controller
     public function create()
     {
         //
-        return view('admin.dbarangpinjam');
+        $data['pinjam'] = peminjam::all();
+        return view('admin.dbarangpinjam', $data);
     }
 
     /**
@@ -50,6 +51,7 @@ class PeminjamController extends Controller
     {
         //
         // return view('admin.dbarangpinjam', $peminjam);
+        
         
     }
 
@@ -75,6 +77,7 @@ class PeminjamController extends Controller
     {
         //
         $peminjam->status = $request->status;
+        $peminjam->update(['status'=>2]);
         $peminjam->save();
         return redirect()->route('peminjam.create')
                         ->with('Peminjaman Disetujui');

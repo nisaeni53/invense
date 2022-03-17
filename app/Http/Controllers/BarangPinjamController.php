@@ -48,6 +48,7 @@ class BarangPinjamController extends Controller
     public function show(barangPinjam $barangPinjam)
     {
         //
+        
     }
 
     /**
