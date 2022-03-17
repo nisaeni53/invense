@@ -42,7 +42,24 @@
                                 </a>
                             </div>
                         </div>  --}}
+                        @foreach ($kembali as $barang)
                         <div class="col-md-4 col-sm-12">
+                            <div class="card">
+                                <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
+                                <div class="card-body">
+                                    <h4 class="card-title">{{$barang->nama_barang}}</h4>
+                                    <p class="card-desc">{{$barang->jumlah_pinjam}}</p>
+                                </div>
+                                <a href="#">
+                                    <div class="card-footer text-center">
+                                        Kembalikan
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        @endforeach
+
+                        {{-- <div class="col-md-4 col-sm-12">
                             <div class="card">
                                 <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
                                 <div class="card-body">
@@ -83,21 +100,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <div class="card">
-                                <img class="card-img-top" src="{{asset ('/library/icon/infocus.png')}}" alt="Card image cap" height="150" />
-                                <div class="card-body">
-                                    <h4 class="card-title">Infocus</h4>
-                                    <p class="card-desc">Some quick example text to build on the card title.</p>
-                                </div>
-                                <a href="#">
-                                    <div class="card-footer text-center">
-                                        Kembalikan
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </section>
