@@ -68,5 +68,6 @@ Route::group(['middleware' => ['auth','cekrole:user']], function() {
     Route::resource('/user/peminjaman', Inventaris::class);
     Route::resource('/user/pengembalian', PembalikanController::class);
     Route::resource('/user/setting', SettingUserController::class);
+    // Route::resource('/user/permintaan', PermintaanController::class);
 }); 
 

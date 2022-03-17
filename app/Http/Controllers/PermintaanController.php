@@ -14,7 +14,7 @@ class PermintaanController extends Controller
      */
     public function index()
     {
-        return view('admin.dpermintaan');
+        return view('admin.multitable');
     }
 
     /**
