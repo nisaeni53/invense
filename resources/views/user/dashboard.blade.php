@@ -100,8 +100,10 @@
                                                 <td>{{ $row->jam_pelajaran }}</td>
                                                 <td>@if ($row->status == 1)
                                                     <span class="badge badge-pill badge-light-danger mr-1">Pending</span>
-                                                @else
+                                                @elseif ($row->status == 2)
                                                 <span class="badge badge-pill badge-light-success mr-1">Accepted</span>
+                                                @elseif ($row->status == 3)
+                                                <span class="badge badge-pill badge-light-primary mr-1">Refused</span>
                                                 @endif</td>
                                             </tr>
                                             @endforeach

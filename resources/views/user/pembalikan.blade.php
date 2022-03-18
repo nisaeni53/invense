@@ -66,7 +66,12 @@
                                     <h4 class="card-title">{{$barang->nama_barang}}</h4>
                                     <h6 class="card-subtitle text-muted">{{$barang->jumlah_pinjam}}</h6>
                                     <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
-                                    <a href=""><button class="btn btn-primary kembalikan">Kembalikan</button></a>
+                                    <form action="{{ route('pengembalian.update',$barang->id) }}" name="status" method="POST">
+                                        @csrf
+                                        @method('PATCH')
+                                        <input type="hidden" name="status" value="3">
+                                        <button type="submit" class="btn btn-primary">kembalikan</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

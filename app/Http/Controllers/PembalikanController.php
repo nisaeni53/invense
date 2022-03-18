@@ -15,7 +15,6 @@ class PembalikanController extends Controller
     public function index()
     {
         $data['kembali'] = peminjam::where('status', 2)->get();
-        // dd($data);
         return view('user.pembalikan', $data);
     }
 
@@ -69,9 +68,18 @@ class PembalikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, peminjam $peminjam, $id)
     {
-        //
+        // dd($request->all());
+        $peminjam = peminjam::findOrFail($id);
+        $items = peminjam::where('id', $id)->update([
+            'status' => $request->status
+        ]);
+        // $peminjam->status = $request->status;
+        // $peminjam->update(['status'=>3]);
+        // $peminjam->save();
+        return redirect()->route('pengembalian.index')
+                        ->with('Peminjaman Disetujui');
     }
 
     /**
