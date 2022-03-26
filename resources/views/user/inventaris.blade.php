@@ -16,7 +16,7 @@
                         @foreach ($barang as $row)
                         {{-- <td>{{$loop->iteration}}</td> --}}
                         <div class="col-md-4 col-sm-12">
-                            <a href="/user/peminjaman/create">
+                            <a href="/user/peminjaman/create/{{$row->id}}">
                                 <div class="card">
                                     <img class="card-img-top" src="{{url('') . '/' . $row->image}}" alt="Card image cap" height="150" />
                                     <div class="card-body">

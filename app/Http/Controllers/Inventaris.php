@@ -69,7 +69,8 @@ class Inventaris extends Controller
      */
     public function show($id)
     {
-        //
+        $data['barang'] = barang::all();
+        return view('user.forminven', $data);
     }
 
     /**
@@ -104,5 +105,11 @@ class Inventaris extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function peminjaman($id)
+    {
+        
+        $data['barang'] = barang::where('id',$id)->get();
+        return view('user.forminven', $data);
     }
 }

@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth','cekrole:user']], function() {
     Route::resource('/user/peminjaman', Inventaris::class);
     Route::resource('/user/pengembalian', PembalikanController::class);
     Route::resource('/user/setting', SettingUserController::class);
+    Route::get('/user/peminjaman/create/{id}', [Inventaris::class, 'peminjaman']);
     Route::get('/user/profil', function(){
         return view('user.profil');
     });
