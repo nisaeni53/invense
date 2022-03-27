@@ -41,9 +41,13 @@
                                         <!-- general tab -->
                                         <div role="tabpanel" class="tab-pane active" id="account-vertical-general" aria-labelledby="account-pill-general" aria-expanded="true">
                                             <!-- header media -->
+                                            @foreach ($user as $row)
+                                            <form class="form" action="{{ route('profil.update', $row->id) }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('PUT')
                                             <div class="media">
                                                 <a href="javascript:void(0);" class="mr-25">
-                                                    <img src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
+                                                    <img src="/image/{{$row->image}}" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
                                                 </a>
                                                 <!-- upload and reset button -->
                                                 <div class="media-body mt-75 ml-1">
@@ -57,30 +61,30 @@
                                             <!--/ header media -->
 
                                             <!-- form -->
-                                            <form class="validate-form mt-2">
+                                            
                                                 <div class="row">
-                                                    <div class="col-12 col-sm-6">
+                                                    {{-- <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-username">Username</label>
-                                                            <input type="text" class="form-control" id="account-username" name="username" placeholder="Username" value="johndoe" />
+                                                            <input type="text" class="form-control" id="account-username" name="username" placeholder="Username" value={{ $row->name }} />
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-name">Name</label>
-                                                            <input type="text" class="form-control" id="account-name" name="name" placeholder="Name" value="John Doe" />
+                                                            <input type="text" class="form-control" id="account-name" name="name" placeholder="Name" value="{{ $row->name }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-e-mail">E-mail</label>
-                                                            <input type="email" class="form-control" id="account-e-mail" name="email" placeholder="Email" value="granger007@hogward.com" />
+                                                            <input type="email" class="form-control" id="account-e-mail" name="email" placeholder="Email" value="{{ $row->email }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-company">Company</label>
-                                                            <input type="text" class="form-control" id="account-company" name="company" placeholder="Company name" value="Crystal Technologies" />
+                                                            <input type="text" class="form-control" id="account-company" name="company" placeholder="Company name" value="{{ $row->role }}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 mt-75">
@@ -97,6 +101,7 @@
                                                     </div>
                                                 </div>
                                             </form>
+                                            @endforeach
                                             <!--/ form -->
                                         </div>
                                         <!--/ general tab -->

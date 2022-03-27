@@ -10,6 +10,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
 use App\Http\Controllers\Inventaris;
 use App\Http\Controllers\PembalikanController;
+use App\Http\Controllers\ProfiluserController;
 use App\Http\Controllers\SettingUserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/login', function() {
+Route::get('/', function() {
     return view('authentication.login'); 
 })->name('login');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
@@ -57,7 +58,7 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
     Route::resource('/admin/peminjam', PeminjamController::class);
     Route::resource('/admin/barang', BarangController::class);
     Route::resource('/admin/barangpinjam', BarangPinjamController::class);
-    Route::resource('/admin/permintaan', PermintaanController::class);
+    // Route::resource('/admin/permintaan', PermintaanController::class);
     Route::resource('barang', BarangController::class);
     Route::get('/admin/profil', function(){
         return view('admin.profil');
@@ -72,9 +73,10 @@ Route::group(['middleware' => ['auth','cekrole:user']], function() {
     Route::resource('/user/pengembalian', PembalikanController::class);
     Route::resource('/user/setting', SettingUserController::class);
     Route::get('/user/peminjaman/create/{id}', [Inventaris::class, 'peminjaman']);
-    Route::get('/user/profil', function(){
-        return view('user.profil');
-    });
-    // Route::resource('/user/permintaan', PermintaanController::class);
+    // Route::get('/user/profil', function(){
+    //     return view('user.profil');
+    // });
+    Route::resource('/user/profil', ProfiluserController::class);
+    Route::resource('/user/permintaan', PermintaanController::class);
 }); 
 

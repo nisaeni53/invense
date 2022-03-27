@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\register;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
-class RegisterController extends Controller
+class ProfiluserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,10 @@ class RegisterController extends Controller
      */
     public function index()
     {
+        //
         $data['user'] = User::all();
         return view('user.profil', $data);
+        // return view('user.profil', array('user' => Auth::user()));
     }
 
     /**
@@ -45,10 +47,10 @@ class RegisterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\register  $register
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(register $register)
+    public function show($id)
     {
         //
     }
@@ -56,7 +58,7 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\register  $register
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,10 +73,10 @@ class RegisterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\register  $register
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id, User $user)
     {
         //
         $this->validate($request, [
@@ -124,30 +126,11 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\register  $register
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(register $register)
+    public function destroy($id)
     {
         //
     }
-
-    public function register (register $register) {
-        return view('authentication.register');
-    }
-
-    public function simpanregister (Request $request) {
-        // dd($request->all());
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'role' => $request->role,
-            'remember_token' => Str::random(60),
-        ]);
-
-        return redirect('/');
-
-    }
-
 }

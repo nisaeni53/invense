@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('permintaans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_barang');
+            $table->string('nama_user');
+            $table->string('jumlah_permintaan');
+            $table->string('foto_barang');
+            $table->string('deskripsi');
+            $table->string('status');
             $table->timestamps();
         });
     }
