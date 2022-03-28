@@ -16,10 +16,12 @@
             <!-- Dashboard Ecommerce Starts -->
             <section id="dashboard-ecommerce">
                 <section id="card-text-alignment">
+                    @foreach ($user as $item)
+                        
                     <h1 class="mb-2">Setting</h1>
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
-                            <a href="#">
+                            <a href="{{route('profil.edit', $item->id)}}">
                                 <div class="card text-center mb-3">
                                     <div class="card-body">
                                         <h4 class="card-title">Profil</h4>
@@ -59,6 +61,7 @@
                             </a>
                         </div>
                     </div>
+                    @endforeach
                 </section>
             </section>
             <!-- Dashboard Ecommerce ends -->

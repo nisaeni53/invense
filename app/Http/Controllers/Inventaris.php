@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\barang;
 use App\Models\peminjam;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class Inventaris extends Controller
@@ -18,6 +19,7 @@ class Inventaris extends Controller
         //
         // return view('user.inventaris');
         $data['barang'] = barang::all();
+        $data['user'] = User::all();
         return view('user.inventaris', $data);
     }
 
@@ -29,6 +31,7 @@ class Inventaris extends Controller
     public function create()
     {
         $data['barang'] = barang::all();
+        $data['user'] = User::all();
         return view('user.forminven', $data);
     }
 
@@ -70,6 +73,7 @@ class Inventaris extends Controller
     public function show($id)
     {
         $data['barang'] = barang::all();
+        $data['user'] = User::all();
         return view('user.forminven', $data);
     }
 
@@ -110,6 +114,7 @@ class Inventaris extends Controller
     {
         
         $data['barang'] = barang::where('id',$id)->get();
+        $data['user'] = User::all();
         return view('user.forminven', $data);
     }
 }

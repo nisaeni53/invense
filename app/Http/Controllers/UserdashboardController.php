@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjam;
+use App\Models\permintaan;
 use App\Models\User;
 use App\Models\userdashboard;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class UserdashboardController extends Controller
     public function index()
     {
         $data['pinjam'] = peminjam::all();
+        $data['minta'] = permintaan::all();
         $data['user'] = User::all();
         return view('user.dashboard', $data);
     }
@@ -89,6 +91,7 @@ class UserdashboardController extends Controller
 
     public function halamandua(){
         $data['pinjam'] = peminjam::all();
+        $data['minta'] = permintaan::all();
         $data['user'] = User::all();
         return view('user.dashboard', $data);
     }

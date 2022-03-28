@@ -174,12 +174,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($pinjam as $row)
+                                                @foreach ($minta as $row)
                                                 <tr>
                                                     <td>{{ $row->nama_barang }}</td>
                                                     <td>{{ $row->nama_user }}</td>
                                                     <td>{{ $row->jumlah_permintaan }}</td>
-                                                    <td>{{ $row->foto_barang }}</td>
+                                                    <td>
+                                                        <img src="{{url('') . '/' . $row->foto_barang}}" width="100px">
+                                                    </td>
                                                     <td>{{ $row->deskripsi}}</td>
                                                     <td>@if ($row->status == 1)
                                                         <span class="badge badge-pill badge-light-danger mr-1">Pending</span>

@@ -40,41 +40,34 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        $rule = [
+            'image' => 'required|mimes:jpg,jpeg,tmp,png',
             'namab' => 'required',
             'kategorib' => 'required',
             'jenisb' => 'required',
             'stokb' => 'required',
             'tanggalb' => 'required',
-        ]);
-
+        ];
+        $this->validate($request, $rule);
         $input = $request->all();
-  
-        // if ($image = $request->file('image')) {
-        //     $destinationPath = 'image/';
-        //     $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-        //     $image->move($destinationPath, $profileImage);
-        //     $input['image'] = "$profileImage";
-        // }
-
-        // $input = $request->all();
         if ($request->hasFile('image')) {
-             $foto = $request->file('image');
-             $foto_ext = $foto->getClientOriginalExtension();
-             $foto_name = Str::random(8);
+            $foto_barang = $request->file('image');
+            $foto_ext = $foto_barang->getClientOriginalExtension();
+            $foto_name = Str::random(8);
 
-             $upload_path = 'assets/uploads/barang/';
-             $imagename = $upload_path.'/'.$foto_name.'.'.$foto_ext;
-             $request->file('image')->move($upload_path,$imagename);
+        $upload_path = 'assets/uploads/user/karakter';
+        $imagename = $upload_path.'/'.$foto_name.'.'.$foto_ext;
+        $request->file('image')->move($upload_path,$imagename);
 
-             $input['image'] = $imagename;
+        $input['image'] = $imagename;
         }
-      
-        Barang::create($request->all());
-       
-        return redirect()->route('barang.index')
-                        ->with('Barang Telah Ditambahkan.');
+
+        $status = barang::create($input);
+        if ($status){
+            return redirect('barang')->with('success', 'Data berhasil ditambahkan');
+        }else{
+            return redirect('barang.create')->with('error', 'Data gagal ditambahkan');
+        }
     }
 
     /**

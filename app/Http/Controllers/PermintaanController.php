@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\permintaan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -17,6 +18,7 @@ class PermintaanController extends Controller
     public function index()
     {
         $data['pinjam'] = permintaan::all();
+        $data['user'] = User::all();
         return view('user.permintaan', $data);
     }
 
@@ -29,6 +31,7 @@ class PermintaanController extends Controller
     {
         //
         $data['pinjam'] = permintaan::all();
+        $data['user'] = User::all();
         return view('user.permintaan', $data);
     }
 

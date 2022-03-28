@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjam;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PeminjamController extends Controller
@@ -15,6 +16,7 @@ class PeminjamController extends Controller
     public function index()
     {
         $data['pinjam'] = peminjam::all();
+        $data['user'] = User::all();
         return view('admin.dpeminjaman', $data);
     }
 
@@ -27,6 +29,7 @@ class PeminjamController extends Controller
     {
         //
         $data['pinjam'] = peminjam::all();
+        $data['user'] = User::all();
         return view('admin.dbarangpinjam', $data);
     }
 

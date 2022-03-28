@@ -44,25 +44,25 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="last-name-column">Nama User</label>
-                                                    <input type="text" id="last-name-column" class="form-control" placeholder="Nama Peminjam" name="nama_peminjam" />
+                                                    <input type="text" id="last-name-column" class="form-control" placeholder="Nama Peminjam" name="nama_user" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="city-column">Jumlah Permintaan</label>
-                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="jumlah_pinjam" />
+                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="jumlah_permintaan" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="city-column">Deskripsi</label>
-                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="jumlah_pinjam" />
+                                                    <input type="text" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="deskripsi" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="city-column">Foto</label>
-                                                    <input type="file" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="jumlah_pinjam" />
+                                                    <input type="file" id="city-column" class="form-control" placeholder="1/2/3/4/5" name="foto_barang" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">

@@ -64,8 +64,9 @@ class ProfiluserController extends Controller
     public function edit($id)
     {
         //
-        $user = User::find($id);
+        $user = User::where('id',$id)->get();
         $data['user'] = $user;
+        // dd($data);
         return view('user.profil', $data);
     }
 
@@ -81,8 +82,8 @@ class ProfiluserController extends Controller
         //
         $this->validate($request, [
             'name' => 'required',
-            'role' => 'required',
-            'email' => 'required',
+            // 'role' => 'required',
+            'email' => 'required'
         ]);
     
         //get data user by ID
@@ -92,7 +93,7 @@ class ProfiluserController extends Controller
     
             $user->update([
                 'name'     => $request->name,
-                'role'   => $request->role,
+                // 'role'   => $request->role,
                 'email'   => $request->email
             ]);
     
@@ -108,7 +109,7 @@ class ProfiluserController extends Controller
             $user->update([
                 'image'     => $image->hashName(),
                 'name'     => $request->name,
-                'role'   => $request->role,
+                // 'role'   => $request->role,
                 'email'   => $request->email
             ]);
     
@@ -116,10 +117,10 @@ class ProfiluserController extends Controller
     
         if($user){
             //redirect dengan pesan sukses
-            return redirect()->route('user.profil')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('profil.edit')->with(['success' => 'Data Berhasil Diupdate!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('user.profil')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('profil.edit')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

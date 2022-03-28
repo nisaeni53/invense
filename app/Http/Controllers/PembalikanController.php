@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjam;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PembalikanController extends Controller
@@ -15,6 +16,7 @@ class PembalikanController extends Controller
     public function index()
     {
         $data['kembali'] = peminjam::where('status', 2)->get();
+        $data['user'] = User::all();
         return view('user.pembalikan', $data);
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SettingUserController extends Controller
@@ -13,7 +14,10 @@ class SettingUserController extends Controller
      */
     public function index()
     {
-        return view('user.setting');
+        $user = User::all();
+        $data['user'] = $user;
+        // dd($data);
+        return view('user.setting',$data);
     }
 
     /**

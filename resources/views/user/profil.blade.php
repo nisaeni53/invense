@@ -42,9 +42,9 @@
                                         <div role="tabpanel" class="tab-pane active" id="account-vertical-general" aria-labelledby="account-pill-general" aria-expanded="true">
                                             <!-- header media -->
                                             @foreach ($user as $row)
-                                            <form class="form" action="{{ route('profil.update', $row->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form class="form" action="{{ route ('profil.update', $row->id)}}" method="POST" enctype="multipart/form-data">
                                                 @csrf
-                                                @method('PUT')
+                                                @method('patch')
                                             <div class="media">
                                                 <a href="javascript:void(0);" class="mr-25">
                                                     <img src="/image/{{$row->image}}" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
@@ -60,7 +60,7 @@
                                             </div>
                                             <!--/ header media -->
 
-                                            <!-- form -->
+                                                         <!-- form -->
                                             
                                                 <div class="row">
                                                     {{-- <div class="col-12 col-sm-6">
@@ -79,20 +79,6 @@
                                                         <div class="form-group">
                                                             <label for="account-e-mail">E-mail</label>
                                                             <input type="email" class="form-control" id="account-e-mail" name="email" placeholder="Email" value="{{ $row->email }}" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-6">
-                                                        <div class="form-group">
-                                                            <label for="account-company">Company</label>
-                                                            <input type="text" class="form-control" id="account-company" name="company" placeholder="Company name" value="{{ $row->role }}" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 mt-75">
-                                                        <div class="alert alert-warning mb-50" role="alert">
-                                                            <h4 class="alert-heading">Your email is not confirmed. Please check your inbox.</h4>
-                                                            <div class="alert-body">
-                                                                <a href="javascript: void(0);" class="alert-link">Resend confirmation</a>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
