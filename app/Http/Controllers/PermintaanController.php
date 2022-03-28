@@ -18,7 +18,7 @@ class PermintaanController extends Controller
     public function index()
     {
         $data['pinjam'] = permintaan::all();
-        $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.permintaan', $data);
     }
 

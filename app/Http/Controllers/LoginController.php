@@ -94,14 +94,14 @@ class LoginController extends Controller
             } elseif (Auth::user()->role == 'user') { // Role User
                 return redirect('/user/dashboard');
             }
-            return redirect('/login');
+            return redirect('/');
         }
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function logout (Request $request){
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 
 }

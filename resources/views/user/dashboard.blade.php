@@ -12,7 +12,7 @@
             <!-- Dashboard Ecommerce Starts -->
             <section id="dashboard-ecommerce">
                 <div class="container">
-                    <div class="row match-height">
+                    <div class="row match-height mt-2">
                         <div class="col-lg-3 col-md-6">
                             <div class="lanjay">
                                 <div class="row">
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </div> --}}
-                <div class="col-12">
+                <div class="col-12 mt-2">
                     <div class="card">
                         <div class="card-body">
                             <ul class="nav nav-pills justify-content-center">

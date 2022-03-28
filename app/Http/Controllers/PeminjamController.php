@@ -17,6 +17,7 @@ class PeminjamController extends Controller
     {
         $data['pinjam'] = peminjam::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('admin.dpeminjaman', $data);
     }
 

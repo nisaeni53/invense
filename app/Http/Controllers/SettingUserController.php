@@ -14,7 +14,7 @@ class SettingUserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
+        $user = User::where('role', 'user')->get();
         $data['user'] = $user;
         // dd($data);
         return view('user.setting',$data);
