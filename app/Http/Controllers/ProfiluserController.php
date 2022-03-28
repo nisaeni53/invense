@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use File;
 
 class ProfiluserController extends Controller
 {
@@ -80,47 +82,43 @@ class ProfiluserController extends Controller
     public function update(Request $request, $id, User $user)
     {
         //
-        $this->validate($request, [
-            'name' => 'required',
-            // 'role' => 'required',
-            'email' => 'required'
-        ]);
-    
-        //get data user by ID
-        $user = User::findOrFail($user->id);
-    
-        if($request->file('image') == "") {
-    
-            $user->update([
-                'name'     => $request->name,
-                // 'role'   => $request->role,
-                'email'   => $request->email
-            ]);
-    
-        } else {
-    
-            //hapus old image
-            Storage::disk('local')->delete('public/image/'.$user->image);
-    
-            //upload new image
+        $rule = [
+            'name => required',
+            'email => required',
+        ];
+        $customMessages = [
+            'email' => 'Field email Wajib Diisi!',
+            'name.required' => 'Field Nama Wajib Diisi',
+        ];
+
+        $this->validate($request, $rule, $customMessages);
+        $input = $request->all();
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->hasFile('image')) {
+            File::delete($user->image);
+
             $image = $request->file('image');
-            $image->storeAs('public/image', $image->hashName());
-    
-            $user->update([
-                'image'     => $image->hashName(),
-                'name'     => $request->name,
-                // 'role'   => $request->role,
-                'email'   => $request->email
-            ]);
-    
-        }
-    
-        if($user){
-            //redirect dengan pesan sukses
-            return redirect()->route('profil.edit')->with(['success' => 'Data Berhasil Diupdate!']);
+            $image_ext = $image->getClientOriginalExtension();
+            $image_name = Str::random(8);
+
+            $upload_path = 'image/';
+            $imagename = $image_name.'.'.$image_ext;
+            $request->file('image')->move($upload_path,$imagename);
+
+        $user['image'] = $imagename;
+    }
+
+    // dd($user);
+
+   
+        $status = $user->save();
+        if ($status){
+            return redirect('user/dashboard')->with('success', 'Data berhasil diubah');
         }else{
-            //redirect dengan pesan error
-            return redirect()->route('profil.edit')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect('user/profil')->with('error', 'Data gagal diubah');
         }
     }
 

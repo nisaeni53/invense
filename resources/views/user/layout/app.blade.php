@@ -56,13 +56,13 @@
     @include('user.layout.sidebar')
     <!-- END: Main Menu-->
 
-    <!-- BEGIN: Content-->
-    @yield('content')
-    <!-- END: Content-->
-
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
+    <!-- BEGIN: Content-->
+    @yield('content')
+    <!-- END: Content-->
+    
     <!-- BEGIN: Vendor JS-->
     <script src="{{asset('assets/admin/')}}/app-assets/vendors/js/vendors.min.js"></script>
     <!-- BEGIN Vendor JS-->

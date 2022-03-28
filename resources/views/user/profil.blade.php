@@ -52,7 +52,7 @@
                                                 <!-- upload and reset button -->
                                                 <div class="media-body mt-75 ml-1">
                                                     <label for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75">Upload</label>
-                                                    <input type="file" id="account-upload" hidden accept="image/*" />
+                                                    <input type="file" id="account-upload" name="image" hidden accept="image/*" />
                                                     <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button>
                                                     <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
                                                 </div>
