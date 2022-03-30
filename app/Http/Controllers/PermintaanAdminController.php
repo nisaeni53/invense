@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\permintaan;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\permintaan;
+use App\Models\permintaanAdmin;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
-class PermintaanController extends Controller
+class PermintaanAdminController extends Controller
 {
+    //
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +19,10 @@ class PermintaanController extends Controller
      */
     public function index()
     {
-        $data['pinjam'] = permintaan::all();
+        $data['permintaan'] = permintaan::all();
+        $data['user'] = User::all();
         $data['user'] = User::where('role', 'user')->get();
-        return view('user.permintaan', $data);
+        return view('admin.dpermintaan', $data);
     }
 
     /**
@@ -106,6 +109,11 @@ class PermintaanController extends Controller
     public function update(Request $request, permintaan $permintaan)
     {
         //
+        $permintaan->status = $request->status;
+        $permintaan->update(['status'=>2]);
+        $permintaan->save();
+        return redirect()->route('permintaanadmin.index')
+                        ->with('Peminjaman Disetujui');
     }
 
     /**

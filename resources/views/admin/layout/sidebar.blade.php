@@ -30,11 +30,7 @@
                     </li>
                 </ul>
             </li>  --}}
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('permintaan.index')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{url ('admin/profil')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Profil</span></a>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/admin/dpermintaan')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
             </li>
         </ul>
     </div>

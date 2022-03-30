@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserdashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PermintaanAdminController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PermintaanController;
 use App\Http\Controllers\BarangController;
@@ -58,6 +59,7 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
     Route::resource('/admin/peminjam', PeminjamController::class);
     Route::resource('/admin/barang', BarangController::class);
     Route::resource('/admin/barangpinjam', BarangPinjamController::class);
+    Route::resource('/admin/dpermintaan', PermintaanAdminController::class);
     // Route::resource('/admin/permintaan', PermintaanController::class);
     Route::resource('barang', BarangController::class);
     Route::get('/admin/profil', function(){

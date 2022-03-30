@@ -18,135 +18,51 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Id pinjam</th>
-                                        <th>Nama peminjam</th>
+                                        <th>Id</th>
+                                        <!-- <th>Foto</th> -->
+                                        <th>Nama User</th>
                                         <th>Nama Barang</th>
-                                        <th>Jumlah barang</th>
+                                        <th>Deskripsi</th>
+                                        <th>Jumlah Permintaan</th>
                                         <th>Tanggal</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                @foreach ($permintaan as $row)
                                     <tr>
+                                                <td>{{ $row->id }}</td>
+                                                
+                                                <td>{{ $row->nama_user }}</td>
+                                                <td>{{ $row->nama_barang }}</td>
+                                                <td>{{ $row->deskripsi }}</td>
+                                                <td>{{ $row->jumlah_permintaan }}</td>
+                                                <td>{{ $row->created_at }}</td>
                                         <td>
-                                            <img src="{{ asset ('assets/admin')}}/app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" />
-                                            <span class="font-weight-bold">Angular Project</span>
-                                        </td>
-                                        <td>Peter Charls</td>
-                                        <td>
-                                            <div class="avatar-group">
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
+                                        <div style="width:175px;"> @if ($row->status == 1)
+                                            <div style="float: left; width: 75px"> 
+                                            <form action="{{ route('peminjam.update',$row->id) }}" name="status" value="2" method="POST">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button type="submit" class="btn btn-primary">Terima</button>
+                                                <!-- @csrf
+                                                @method('DELETE')
+                                                <a class="btn btn-danger" href="{{ route('peminjam.destroy',$row->id) }}" method="POST">Tolak</a> -->
+                                            </form>
                                             </div>
-                                        </td>
-                                        <td><span class="badge badge-pill badge-light-primary mr-1">Active</span></td>
-                                        <td>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-primary">Terima</button>
-                                            </a>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-danger">Tolak</button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset ('assets/admin')}}/app-assets/images/icons/react.svg" class="mr-75" height="20" width="20" alt="React" />
-                                            <span class="font-weight-bold">React Project</span>
-                                        </td>
-                                        <td>Ronald Frest</td>
-                                        <td>
-                                            <div class="avatar-group">
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge badge-pill badge-light-success mr-1">Completed</span></td>
-                                        <td>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-primary">Terima</button>
-                                            </a>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-danger">Tolak</button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset ('assets/admin')}}/app-assets/images/icons/vuejs.svg" class="mr-75" height="20" width="20" alt="Vuejs" />
-                                            <span class="font-weight-bold">Vuejs Project</span>
-                                        </td>
-                                        <td>Jack Obes</td>
-                                        <td>
-                                            <div class="avatar-group">
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge badge-pill badge-light-info mr-1">Scheduled</span></td>
-                                        <td>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-primary">Terima</button>
-                                            </a>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-danger">Tolak</button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset ('assets/admin')}}/app-assets/images/icons/bootstrap.svg" class="mr-75" height="20" width="20" alt="Bootstrap" />
-                                            <span class="font-weight-bold">Bootstrap Project</span>
-                                        </td>
-                                        <td>Jerry Milton</td>
-                                        <td>
-                                            <div class="avatar-group">
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                                <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                    <img src="{{ asset ('assets/admin')}}/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge badge-pill badge-light-warning mr-1">Pending</span></td>
-                                        <td>
-                                            <a href="javascript:void(0);">
-                                                <button class="btn btn-primary">Terima</button>
-                                            </a>
-                                            <form method="POST">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
+                                            <div style="float: right; width: 75px"> 
+                                            <form action="{{ route('peminjam.destroy',$row->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Tolak</button>
+                                            </form>
+                                            </div> @else
+                                            <span class="badge badge-pill badge-light-success mr-1">Accepted</span>
+                                            @endif
+                                        </div>       
                                         </td>
                                     </tr>
                                 </tbody>
+                                @endforeach
                             </table>
                         </div>
                     </div>
