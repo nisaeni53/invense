@@ -40,7 +40,7 @@
                                         <td>
                                         <div style="width:175px;"> @if ($row->status == 1)
                                             <div style="float: left; width: 75px"> 
-                                            <form action="{{ route('peminjam.update',$row->id) }}" name="status" value="2" method="POST">
+                                            <form action="{{ route('dpermintaan.update',$row->id) }}" name="status" value="2" method="POST">
                                                 @csrf
                                                 @method('PATCH')
                                                 <button type="submit" class="btn btn-primary">Terima</button>
@@ -50,7 +50,7 @@
                                             </form>
                                             </div>
                                             <div style="float: right; width: 75px"> 
-                                            <form action="{{ route('peminjam.destroy',$row->id) }}" method="POST">
+                                            <form action="{{ route('dpermintaan.destroy',$row->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Tolak</button>
