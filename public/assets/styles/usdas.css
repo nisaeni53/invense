@@ -40,13 +40,20 @@ vertical-layout.vertical-menu-modern.menu-collapsed.header-navbar.floating-nav {
     box-shadow: 3px 5px 6px #AEAEAE;
 }
 
-.icon1{
+.icon2,.icon4{
+    background: #FFE5EE;
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    margin-top: -50px;
+}
+.icon1,.icon3{
     background: #CAF1FF;
     width: 90px;
     height: 90px;
     border-radius: 15px;
     margin-top: -50px;
 }
-.icon1 img{
+.icon1,.icon2,.icon3,.icon4 img{
     padding: 20px 0 0 20px;
 }
