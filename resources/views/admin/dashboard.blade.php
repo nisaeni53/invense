@@ -16,8 +16,13 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div>
+<<<<<<< HEAD
                                         <h2 class="font-weight-bolder mb-0">Data</h2>
                                         <p class="card-text">Barang</p>
+=======
+                                        <h2 class="font-weight-bolder mb-0">86%</h2>
+                                        <p class="card-text">CPU Usage</p>
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
                                     </div>
                                     <div class="avatar bg-light-primary p-50 m-0">
                                         <div class="avatar-content">
@@ -31,8 +36,13 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div>
+<<<<<<< HEAD
                                         <h2 class="font-weight-bolder mb-0">Data</h2>
                                         <p class="card-text">Peminjam</p>
+=======
+                                        <h2 class="font-weight-bolder mb-0">1.2gb</h2>
+                                        <p class="card-text">Memory Usage</p>
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
                                     </div>
                                     <div class="avatar bg-light-success p-50 m-0">
                                         <div class="avatar-content">
@@ -46,8 +56,13 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div>
+<<<<<<< HEAD
                                         <h2 class="font-weight-bolder mb-0">Data</h2>
                                         <p class="card-text">yang dipinjam</p>
+=======
+                                        <h2 class="font-weight-bolder mb-0">0.1%</h2>
+                                        <p class="card-text">Downtime Ratio</p>
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
                                     </div>
                                     <div class="avatar bg-light-danger p-50 m-0">
                                         <div class="avatar-content">
@@ -61,8 +76,13 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div>
+<<<<<<< HEAD
                                         <h2 class="font-weight-bolder mb-0">Data</h2>
                                         <p class="card-text">Permintaan</p>
+=======
+                                        <h2 class="font-weight-bolder mb-0">13</h2>
+                                        <p class="card-text">Issues Found</p>
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
                                     </div>
                                     <div class="avatar bg-light-warning p-50 m-0">
                                         <div class="avatar-content">
@@ -77,6 +97,7 @@
 
                 <div class="row">
                     <div class="col-lg-8">
+<<<<<<< HEAD
                         <div class="card">
                             <div class="table-responsive">
                                 <table class="table table-striped">
@@ -122,6 +143,9 @@
                                 </table>
                             </div>
                         </div>
+=======
+                        
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
                     </div>
                     <!-- Developer Meetup Card -->
                     <div class="col-lg-4 col-md-6 col-12">

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\permintaan;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\permintaan;
+use App\Models\permintaanAdmin;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
-class PermintaanController extends Controller
+class PermintaanAdminController extends Controller
 {
+    //
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +19,10 @@ class PermintaanController extends Controller
      */
     public function index()
     {
-        $data['pinjam'] = permintaan::all();
-        $data['user'] = User::where('role', 'user')->get();
-        return view('user.permintaan', $data);
+        $data['permintaan'] = permintaan::all();
+        $data['user'] = User::all();
+        $data['user'] = User::where('role', 'admin')->get();
+        return view('admin.dpermintaan', $data);
     }
 
     /**
@@ -44,34 +47,6 @@ class PermintaanController extends Controller
     public function store(Request $request)
     {
         //
-        $rule = [
-            'nama_barang' => 'required',
-            'nama_user' => 'required',
-            'jumlah_permintaan' => 'required',
-            'deskripsi' => 'required|string',
-            'foto_barang' => 'required|mimes:jpg,jpeg,tmp,png',
-        ];
-
-        $this->validate($request, $rule);
-        $input = $request->all();
-        if ($request->hasFile('foto_barang')) {
-            $foto_barang = $request->file('foto_barang');
-            $foto_ext = $foto_barang->getClientOriginalExtension();
-            $foto_name = Str::random(8);
-
-        $upload_path = 'assets/uploads/user/karakter';
-        $imagename = $upload_path.'/'.$foto_name.'.'.$foto_ext;
-        $request->file('foto_barang')->move($upload_path,$imagename);
-
-        $input['foto_barang'] = $imagename;
-        }
-
-        $status = permintaan::create($input);
-        if ($status){
-            return redirect('user/dashboard')->with('success', 'Data berhasil ditambahkan');
-        }else{
-            return redirect('user/permintaan')->with('error', 'Data gagal ditambahkan');
-        }
     }
 
     /**
@@ -103,9 +78,18 @@ class PermintaanController extends Controller
      * @param  \App\Models\permintaan  $permintaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, permintaan $permintaan)
+    public function update(Request $request, permintaan $permintaan, $id)
     {
         //
+        $permintaan = permintaan::findOrFail($id);
+        $items = permintaan::where('id', $id)->update([
+            'status' => 2
+        ]);
+        // $peminjam->status = $request->status;
+        // $peminjam->update(['status'=>3]);
+        // $peminjam->save();
+        return redirect()->route('dpermintaan.index')
+                        ->with('Peminjaman Disetujui');
     }
 
     /**

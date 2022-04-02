@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\peminjam;
 use App\Models\User;
+use App\Models\barang;
 use Illuminate\Http\Request;
 
 class PeminjamController extends Controller
@@ -17,6 +18,7 @@ class PeminjamController extends Controller
     {
         $data['pinjam'] = peminjam::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('admin.dpeminjaman', $data);
     }
 
@@ -76,14 +78,21 @@ class PeminjamController extends Controller
      * @param  \App\Models\peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, peminjam $peminjam)
+    public function update($id)
     {
-        //
-        $peminjam->status = $request->status;
-        $peminjam->update(['status'=>2]);
-        $peminjam->save();
-        return redirect()->route('peminjam.create')
-                        ->with('Peminjaman Disetujui');
+        $nama_b = peminjam::where('id', $id)->value('nama_barang');
+        $jumlah_p = peminjam::where('id', $id)->value('jumlah_pinjam');
+        $id_b = Barang::where('namab', $nama_b)->value('id');
+        $stok_b = Barang::where('namab', $nama_b)->value('stokb');
+        $update_b =Barang::find($id_b);
+        $update_b->update([
+            'stokb' => $stok_b - $jumlah_p
+        ]);
+        $update_b =peminjam::find($id);
+        $update_b->update([
+            'status' => 2
+        ]);
+        return redirect()->route ('barangpinjam.index');
     }
 
 

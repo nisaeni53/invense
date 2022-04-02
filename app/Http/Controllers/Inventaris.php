@@ -20,6 +20,7 @@ class Inventaris extends Controller
         // return view('user.inventaris');
         $data['barang'] = barang::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.inventaris', $data);
     }
 
@@ -32,6 +33,7 @@ class Inventaris extends Controller
     {
         $data['barang'] = barang::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.forminven', $data);
     }
 
@@ -74,6 +76,7 @@ class Inventaris extends Controller
     {
         $data['barang'] = barang::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.forminven', $data);
     }
 
@@ -115,6 +118,7 @@ class Inventaris extends Controller
         
         $data['barang'] = barang::where('id',$id)->get();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.forminven', $data);
     }
 }

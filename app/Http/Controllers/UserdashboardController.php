@@ -20,6 +20,7 @@ class UserdashboardController extends Controller
         $data['pinjam'] = peminjam::all();
         $data['minta'] = permintaan::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.dashboard', $data);
     }
 
@@ -93,6 +94,7 @@ class UserdashboardController extends Controller
         $data['pinjam'] = peminjam::all();
         $data['minta'] = permintaan::all();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.dashboard', $data);
     }
 }

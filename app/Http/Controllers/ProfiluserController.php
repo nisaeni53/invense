@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use File;
+// use File;
+use Illuminate\Support\Facades\File;
 
 class ProfiluserController extends Controller
 {

@@ -17,6 +17,7 @@ class PembalikanController extends Controller
     {
         $data['kembali'] = peminjam::where('status', 2)->get();
         $data['user'] = User::all();
+        $data['user'] = User::where('role', 'user')->get();
         return view('user.pembalikan', $data);
     }
 

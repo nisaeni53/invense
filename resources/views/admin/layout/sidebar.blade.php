@@ -30,11 +30,15 @@
                     </li>
                 </ul>
             </li>  --}}
+<<<<<<< HEAD
             <li class=" nav-item {{ Request::is('admin/permintaan') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/permintaan')}}"><img src="{{asset('library/icon')}}/permintaan.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
             </li>
             <li class=" nav-item {{ Request::is('admin/profil') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/profil')}}"><img src="{{asset('library/icon')}}/Profile.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Profil</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><img src="{{asset('library/icon')}}/Logout.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>
+=======
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('dpermintaan.index')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
             </li>
         </ul>
     </div>

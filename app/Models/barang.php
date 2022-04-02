@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Peminjam;
 
 class barang extends Model
 {
@@ -17,4 +18,8 @@ class barang extends Model
         'stokb',
         'tanggalb',
     ];
+    public function peminjam()
+    {
+        return $this->belongsTo(Peminjam::class);
+    }
 }

@@ -22,7 +22,13 @@
             </li>
             <li class=" nav-item {{ Request::is('user/permintaan') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url('/user/permintaan')}}"><img src="{{asset('library/icon')}}/permintaan.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Permintaan</span></a>
             </li>
+<<<<<<< HEAD
             <li class=" nav-item {{ Request::is('user/setting') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url('/user/setting')}}"><img src="{{asset('library/icon')}}/Setting.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Setting</span></a>
+=======
+            {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/user/profil')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Profil</span></a>
+            </li> --}}
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{url('/user/setting')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Setting</span></a>
+>>>>>>> 917cd8dd608743aeb617a4bdc06e16d47d1d05e9
             </li>
             {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>
             </li> --}}
