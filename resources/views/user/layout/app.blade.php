@@ -59,6 +59,8 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
+    @include('user.layout.navbar')
+    
     <!-- BEGIN: Content-->
     @yield('content')
     <!-- END: Content-->

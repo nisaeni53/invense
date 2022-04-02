@@ -16,7 +16,6 @@ class BarangController extends Controller
     public function index()
     {
         $barangs = barang::latest()->paginate(5);
-      
         return view('admin.dbarang',compact('barangs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }

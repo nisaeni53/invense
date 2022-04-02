@@ -12,13 +12,13 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content mt-5">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="nav-item active"><a class="d-flex align-items-center" href="{{route ('halamansatu')}}"><i data-feather="home"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Dashboard</span></a>
+            <li class="nav-item {{ Request::is('admin/dashboard') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route ('halamansatu')}}"><img src="{{asset('library/icon')}}/Home.png" alt="" height="20" class="mr-2"><span class="menu-item text-truncate" data-i18n="eCommerce">Dashboard</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('barang.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Data Barang</span></a>
+            <li class=" nav-item {{ Request::is('admin/barang') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/barang')}}"><img src="{{asset('library/icon')}}/Folder.png" alt="" height="20" class="mr-2"><span class="menu-item text-truncate" data-i18n="List">Data Barang</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('peminjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Data Peminjam</span></a>
+            <li class=" nav-item {{ Request::is('admin/peminjam') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/peminjam')}}"><img src="{{asset('library/icon')}}/2 User.png" alt="" height="20" class="mr-2"><span class="menu-item text-truncate" data-i18n="List">Data Peminjam</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('barangpinjam.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Data Yang Dipinjam</span></a>
+            <li class=" nav-item {{ Request::is('admin/barangpinjam') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/barangpinjam')}}"><img src="{{asset('library/icon')}}/Buy.png" alt="" height="20" class="mr-2"><span class="menu-item text-truncate" data-i18n="Edit">Data Yang Dipinjam</span></a>
             </li>
             {{--  <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">Barang</span></a>
                 <ul class="menu-content">
@@ -30,11 +30,11 @@
                     </li>
                 </ul>
             </li>  --}}
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('permintaan.index')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
+            <li class=" nav-item {{ Request::is('admin/permintaan') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/permintaan')}}"><img src="{{asset('library/icon')}}/permintaan.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Data Permintaan</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{url ('admin/profil')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Profil</span></a>
+            <li class=" nav-item {{ Request::is('admin/profil') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{url ('admin/profil')}}"><img src="{{asset('library/icon')}}/Profile.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Profil</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route ('logout')}}"><img src="{{asset('library/icon')}}/Logout.png" alt="" height="20" class="mr-2"><span class="menu-title text-truncate" data-i18n="Typography">Logout</span></a>
             </li>
         </ul>
     </div>

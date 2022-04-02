@@ -1,4 +1,3 @@
-@include('user.layout.navbar')
 @extends('user.layout.app')
 
 @section('content') 

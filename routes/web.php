@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PermintaanController;
+use App\Http\Controllers\DpermintaanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangPinjamController;
 use App\Http\Controllers\Inventaris;
@@ -40,9 +41,7 @@ Route::resource('barang', BarangController::class);
 // Route::get('/coba', function(){
 //     return view('user.forminven');
 // });
-Route::get('/coba2', function(){
-    return view('admin.multitable');
-});
+
 // Route::get('/coba3', function(){
 //     return view('user.pembalikan');
 // });
@@ -58,7 +57,7 @@ Route::group(['middleware' => ['auth','cekrole:admin']], function () {
     Route::resource('/admin/peminjam', PeminjamController::class);
     Route::resource('/admin/barang', BarangController::class);
     Route::resource('/admin/barangpinjam', BarangPinjamController::class);
-    // Route::resource('/admin/permintaan', PermintaanController::class);
+    Route::resource('/admin/permintaan', DpermintaanController::class);
     Route::resource('barang', BarangController::class);
     Route::get('/admin/profil', function(){
         return view('admin.profil');
@@ -78,5 +77,8 @@ Route::group(['middleware' => ['auth','cekrole:user']], function() {
     // });
     Route::resource('/user/profil', ProfiluserController::class);
     Route::resource('/user/permintaan', PermintaanController::class);
+    Route::get('/user/landing', function(){
+        return view('user.landing');
+    });
 }); 
 

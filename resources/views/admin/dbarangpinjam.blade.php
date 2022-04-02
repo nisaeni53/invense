@@ -1,4 +1,4 @@
-@include('admin.layout.navbar')
+
 @extends('admin.layout.app')
 
 @section('content')

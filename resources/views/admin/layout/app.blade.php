@@ -57,6 +57,7 @@
     @include('admin.layout.sidebar')
     <!-- END: Main Menu-->
 
+    @include('admin.layout.navbar')
     <!-- BEGIN: Content-->
     @yield('content')
     <!-- END: Content-->

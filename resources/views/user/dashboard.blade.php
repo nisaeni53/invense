@@ -1,4 +1,3 @@
-@include('user.layout.navbar')
 @extends('user.layout.app')
 
 @section('content') 
@@ -12,8 +11,9 @@
             <!-- Dashboard Ecommerce Starts -->
             <section id="dashboard-ecommerce">
                 <div class="container">
-                    <div class="row match-height">
+                    <div class="row match-height mt-2">
                         <div class="col-lg-3 col-md-6">
+                            <a href="/user/peminjaman">
                             <div class="lanjay">
                                 <div class="row">
                                     <div class="col-6">
@@ -21,56 +21,63 @@
                                     </div>
                                     <div class="col-6 text-center ">
                                         <h5>Pinjam</h5>
-                                        <p>Barang</p>
+                                        <p style="color:dimgray;">Barang</p>
                                     </div>
                                 </div>
                                 <hr>
-                                <a href="/user/peminjaman">Cek All></a>
+                                Cek All>
+                            </a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
+                            <a href="/user/permintaan">
                             <div class="lanjay">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="icon1 mr-2"><img src="{{asset('library/icon')}}/Folderblack.png" alt="" style="height: 70%"></div>
+                                        <div class="icon2 mr-2"><img src="{{asset('library/icon')}}/permintaan.png" alt="" style="height: 70%"></div>
                                     </div>
                                     <div class="col-6 text-center ">
                                         <h5>Form</h5>
-                                        <p>Permintaan</p>
+                                        <p style="color:dimgray;">Permintaan</p>
                                     </div>
                                 </div>
                                 <hr>
-                                <a href="/user/permintaan">Cek All></a>
+                                Cek All>
+                            </a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
+                            <a href="/user/pengembalian">
                             <div class="lanjay">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="icon1 mr-2"><img src="{{asset('library/icon')}}/Folderblack.png" alt="" style="height: 70%"></div>
+                                        <div class="icon3 mr-2"><img src="{{asset('library/icon')}}/Logout.png" alt="" style="height: 70%"></div>
                                     </div>
                                     <div class="col-6 text-center ">
                                         <h5>Kembalikan</h5>
-                                        <p>Barang</p>
+                                        <p style="color:dimgray;">Barang</p>
                                     </div>
                                 </div>
                                 <hr>
-                                <a href="/user/pengembalian">Cek All></a>
+                                Cek All>
+                            </a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
+                            <a href="/user/setting">
                             <div class="lanjay">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="icon1 mr-2"><img src="{{asset('library/icon')}}/Folderblack.png" alt="" style="height: 70%"></div>
+                                        <div class="icon4 mr-2"><img src="{{asset('library/icon')}}/Setting.png" alt="" style="height: 70%"></div>
                                     </div>
                                     <div class="col-6 text-center ">
                                         <h5>Setting</h5>
-                                        {{-- <p>01</p> --}}
+                                        <p style="color:dimgray;">Account</p>
                                     </div>
                                 </div>
                                 <hr>
-                                <a href="/user/setting">Cek All></a>
+                                Cek All>
+                            </a>
                             </div>
                         </div>
                     </div>
@@ -114,7 +121,7 @@
                         </div>
                     </div> --}}
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card mt-2">
                         <div class="card-body">
                             <ul class="nav nav-pills justify-content-center">
                                 <li class="nav-item">
